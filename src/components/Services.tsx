@@ -4,32 +4,38 @@ const services = [
   {
     icon: Layout,
     title: "Landing Pages",
-    description: "Páginas de alta conversão com design moderno e performance otimizada.",
+    description: "Páginas de alta conversão com design moderno, SEO otimizado e performance máxima para capturar leads.",
+    tags: ["Conversão", "SEO", "Responsivo"],
   },
   {
     icon: Globe,
     title: "Sites Institucionais",
-    description: "Presença digital profissional que transmite credibilidade para sua marca.",
+    description: "Presença digital profissional que transmite credibilidade e fortalece a identidade da sua marca.",
+    tags: ["Branding", "CMS", "Multi-idioma"],
   },
   {
     icon: Monitor,
     title: "Sistemas Completos",
-    description: "Soluções sob medida com painéis administrativos e integrações.",
+    description: "Soluções sob medida com painéis administrativos, dashboards e integrações com APIs externas.",
+    tags: ["Dashboard", "API REST", "Relatórios"],
   },
   {
     icon: Smartphone,
     title: "Agendamento Online",
-    description: "Clínicas, barbearias e negócios com gestão inteligente de horários.",
+    description: "Gestão inteligente de horários para clínicas, barbearias e prestadores de serviço.",
+    tags: ["Calendário", "Notificações", "Pagamento"],
   },
   {
     icon: Database,
     title: "dApps & BaaS",
-    description: "Aplicações descentralizadas e soluções Bank as a Service.",
+    description: "Aplicações descentralizadas e infraestrutura bancária digital com segurança e compliance.",
+    tags: ["Blockchain", "Smart Contracts", "KYC"],
   },
   {
     icon: Film,
     title: "Plataformas de Vídeo",
-    description: "Streaming estilo Netflix com gestão de conteúdo e assinaturas.",
+    description: "Streaming sob demanda estilo Netflix com gestão de conteúdo, assinaturas e analytics.",
+    tags: ["Streaming", "Assinaturas", "CDN"],
   },
 ];
 
@@ -45,16 +51,26 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {services.map((service, i) => (
             <div
               key={service.title}
-              className="group relative rounded-xl border border-border bg-gradient-card p-8 shadow-card hover:border-primary/30 transition-all duration-300"
+              className="group relative rounded-xl border border-border bg-gradient-card p-8 shadow-card hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-primary" />
+                </div>
+                <span className="text-xs font-mono text-muted-foreground/50 uppercase tracking-wider">{String(i + 1).padStart(2, '0')}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm mb-5">{service.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span key={tag} className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-primary/5 text-primary/70 border border-primary/10">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
