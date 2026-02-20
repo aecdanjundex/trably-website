@@ -1,21 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -68,9 +55,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
       <DialogContent className="sm:max-w-md border-border bg-card">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold">Fale com a equipe</DialogTitle>
-          <DialogDescription>
-            Preencha seus dados e entraremos em contato.
-          </DialogDescription>
+          <DialogDescription>Preencha seus dados e entraremos em contato.</DialogDescription>
         </DialogHeader>
 
         <Form {...form}>
@@ -123,10 +108,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
+                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel className="text-sm font-normal text-muted-foreground">
