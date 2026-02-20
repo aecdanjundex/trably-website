@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import CTA from "@/components/CTA";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <Hero onContactClick={() => setContactOpen(true)} />
       <Services />
       <Projects />
+      <Testimonials />
       <CTA onContactClick={() => setContactOpen(true)} />
       <Footer />
       <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
