@@ -8,7 +8,11 @@ const highlights = [
   { icon: MessageSquare, text: "Comunicação transparente em cada etapa" },
 ];
 
-const CTA = () => {
+interface CTAProps {
+  onContactClick: () => void;
+}
+
+const CTA = ({ onContactClick }: CTAProps) => {
   return (
     <section className="py-24 sm:py-32 relative">
       <div className="container mx-auto px-6">
@@ -39,7 +43,7 @@ const CTA = () => {
               </ul>
 
               <div>
-                <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:opacity-90 transition-opacity">
+                <Button size="lg" onClick={onContactClick} className="bg-gradient-primary text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:opacity-90 transition-opacity">
                   Falar com a equipe
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
