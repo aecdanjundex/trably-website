@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -8,7 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
-const Index = () => {
+export default function HomePage() {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
@@ -23,6 +25,4 @@ const Index = () => {
       <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );
-};
-
-export default Index;
+}

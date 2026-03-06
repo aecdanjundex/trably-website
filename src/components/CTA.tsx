@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, MessageSquare, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import ctaImage from "@/assets/cta-image.png";
 
 const highlights = [
@@ -30,12 +31,16 @@ const CTA = ({ onContactClick }: CTAProps) => {
                 Tem um projeto em mente?
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
-                Entre em contato e vamos transformar sua ideia em uma solução digital de alto nível. Da concepção ao deploy, cuidamos de tudo.
+                Entre em contato e vamos transformar sua ideia em uma solução
+                digital de alto nível. Da concepção ao deploy, cuidamos de tudo.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {highlights.map((item) => (
-                  <li key={item.text} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <li
+                    key={item.text}
+                    className="flex items-center gap-3 text-sm text-muted-foreground"
+                  >
                     <item.icon className="w-4 h-4 text-primary shrink-0" />
                     {item.text}
                   </li>
@@ -43,7 +48,11 @@ const CTA = ({ onContactClick }: CTAProps) => {
               </ul>
 
               <div>
-                <Button size="lg" onClick={onContactClick} className="bg-gradient-primary text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:opacity-90 transition-opacity">
+                <Button
+                  size="lg"
+                  onClick={onContactClick}
+                  className="bg-gradient-primary text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:opacity-90 transition-opacity"
+                >
                   Falar com a equipe
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -52,10 +61,12 @@ const CTA = ({ onContactClick }: CTAProps) => {
 
             {/* Image */}
             <div className="hidden lg:block relative">
-              <img
+              <Image
                 src={ctaImage}
                 alt="Equipe desenvolvendo soluções digitais"
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent" />
             </div>
