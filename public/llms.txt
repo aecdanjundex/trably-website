@@ -1,0 +1,31 @@
+# Trably Software
+
+> Engenharia de software sob medida. Projetamos e desenvolvemos sistemas, plataformas e aplicações personalizadas — da arquitetura ao deploy — para negócios que querem escalar.
+
+Trably Software (Trably) é uma empresa de desenvolvimento de software com foco em soluções sob medida, confiáveis e escaláveis. CNPJ 60.510.809/0001-95. Atende clientes no Brasil, em português.
+
+## Serviços
+
+- **Landing Pages**: páginas de alta conversão com design moderno, SEO otimizado e performance máxima para capturar leads.
+- **Sites Institucionais**: presença digital profissional que transmite credibilidade e fortalece a identidade da marca.
+- **Sistemas Completos**: soluções sob medida com painéis administrativos, dashboards e integrações com APIs externas.
+- **Agendamento Online**: gestão inteligente de horários para clínicas, barbearias e prestadores de serviço.
+- **dApps & BaaS**: aplicações descentralizadas e infraestrutura bancária digital com segurança e compliance.
+- **Plataformas de Vídeo**: streaming sob demanda com gestão de conteúdo, assinaturas e analytics.
+
+## Diferenciais
+
+- Desenvolvimento ágil e entregas previsíveis.
+- Suporte contínuo pós-lançamento.
+- Comunicação transparente em cada etapa do projeto.
+
+## Perguntas frequentes
+
+- **Prazo**: landing pages em 1 a 2 semanas; sistemas completos de 1 a 3 meses, com cronograma definido após o levantamento de escopo.
+- **Sob medida**: todas as soluções são projetadas a partir das necessidades do negócio, sem templates engessados.
+- **Suporte**: suporte contínuo pós-lançamento, com monitoramento, correções e evolução do produto.
+- **Orçamento**: gratuito e sem compromisso, solicitado pelo formulário de contato do site.
+
+## Contato
+
+- Solicitação de orçamento pelo formulário de contato no site.

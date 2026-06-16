@@ -4,7 +4,7 @@ import Image from "next/image";
 import ctaImage from "@/assets/cta-image.png";
 
 const highlights = [
-  { icon: Zap, text: "Desenvolvimento ágil e entregas rápidas" },
+  { icon: Zap, text: "Desenvolvimento ágil e entregas previsíveis" },
   { icon: CheckCircle, text: "Suporte contínuo pós-lançamento" },
   { icon: MessageSquare, text: "Comunicação transparente em cada etapa" },
 ];
@@ -15,33 +15,31 @@ interface CTAProps {
 
 const CTA = ({ onContactClick }: CTAProps) => {
   return (
-    <section className="py-24 sm:py-32 relative">
+    <section className="border-t border-border py-24 sm:py-32">
       <div className="container mx-auto px-6">
-        <div className="relative rounded-2xl border border-border bg-gradient-card overflow-hidden">
-          {/* Background glow */}
-          <div className="absolute inset-0 bg-gradient-hero opacity-60" />
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-card shadow-elevated">
+          <div className="absolute inset-0 bg-gradient-hero opacity-70" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Content */}
-            <div className="p-10 sm:p-14 flex flex-col justify-center">
-              <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2">
+            <div className="flex flex-col justify-center p-10 sm:p-14">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
                 Vamos conversar
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
                 Tem um projeto em mente?
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
+              <p className="mb-8 max-w-md leading-relaxed text-muted-foreground">
                 Entre em contato e vamos transformar sua ideia em uma solução
                 digital de alto nível. Da concepção ao deploy, cuidamos de tudo.
               </p>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="mb-8 space-y-3">
                 {highlights.map((item) => (
                   <li
                     key={item.text}
                     className="flex items-center gap-3 text-sm text-muted-foreground"
                   >
-                    <item.icon className="w-4 h-4 text-primary shrink-0" />
+                    <item.icon className="h-4 w-4 shrink-0 text-primary" />
                     {item.text}
                   </li>
                 ))}
@@ -51,16 +49,15 @@ const CTA = ({ onContactClick }: CTAProps) => {
                 <Button
                   size="lg"
                   onClick={onContactClick}
-                  className="bg-gradient-primary text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:opacity-90 transition-opacity"
+                  className="bg-gradient-primary px-8 py-6 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
                 >
                   Falar com a equipe
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
 
-            {/* Image */}
-            <div className="hidden lg:block relative">
+            <div className="relative hidden lg:block">
               <Image
                 src={ctaImage}
                 alt="Equipe desenvolvendo soluções digitais"
@@ -68,7 +65,7 @@ const CTA = ({ onContactClick }: CTAProps) => {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-card via-card/40 to-transparent" />
             </div>
           </div>
         </div>
