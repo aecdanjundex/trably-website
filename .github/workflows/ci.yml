@@ -24,8 +24,10 @@ jobs:
       - name: Lint
         run: bun run lint
 
-      - name: Typecheck
-        run: bun run typecheck
-
       - name: Build
         run: bun run build
+
+      # Runs after build so Next's generated next-env.d.ts (image module types)
+      # is available to tsc.
+      - name: Typecheck
+        run: bun run typecheck
