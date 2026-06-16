@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
@@ -16,11 +17,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onContactClick={() => setContactOpen(true)} />
-      <Hero onContactClick={() => setContactOpen(true)} />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <CTA onContactClick={() => setContactOpen(true)} />
+      <main>
+        <Hero onContactClick={() => setContactOpen(true)} />
+        <Services />
+        <Projects />
+        <Testimonials />
+        <FAQ />
+        <CTA onContactClick={() => setContactOpen(true)} />
+      </main>
       <Footer />
       <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </div>

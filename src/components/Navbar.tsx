@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -34,8 +35,9 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <a
+        <Link
           href="/"
+          aria-label="Trably — página inicial"
           className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
           style={{ fontFamily: "var(--font-display)" }}
         >
@@ -43,7 +45,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             T
           </span>
           Trably
-        </a>
+        </Link>
 
         <div className="flex items-center gap-1 sm:gap-2">
           <div className="mr-2 hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">

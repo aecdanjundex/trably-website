@@ -31,13 +31,17 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="depoimentos" className="relative border-t border-border px-6 py-24 sm:py-32">
+    <section
+      id="depoimentos"
+      aria-labelledby="depoimentos-heading"
+      className="relative border-t border-border px-6 py-24 sm:py-32"
+    >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-primary">
             Clientes
           </span>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 id="depoimentos-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
             A confiança de quem cresceu com a gente
           </h2>
           <p className="mt-4 text-muted-foreground">

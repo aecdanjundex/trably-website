@@ -47,13 +47,17 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative border-t border-border py-24 sm:py-32" id="servicos">
+    <section
+      id="servicos"
+      aria-labelledby="servicos-heading"
+      className="relative border-t border-border py-24 sm:py-32"
+    >
       <div className="container mx-auto px-6">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
             Serviços
           </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 id="servicos-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
             Tecnologia que resolve problemas reais
           </h2>
           <p className="mt-4 text-muted-foreground">
