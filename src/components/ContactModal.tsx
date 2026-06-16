@@ -122,7 +122,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
 
             <Button
               type="submit"
-              className="w-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:opacity-90 transition-opacity"
+              className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
             >
               Enviar
               <ArrowRight className="w-4 h-4 ml-2" />

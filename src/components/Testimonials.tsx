@@ -31,44 +31,44 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="depoimentos" className="py-24 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-hero opacity-30" />
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-sm font-medium tracking-widest uppercase text-primary mb-4 block">
-            Prova Social
+    <section id="depoimentos" className="relative border-t border-border px-6 py-24 sm:py-32">
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-primary">
+            Clientes
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            O que nossos <span className="text-gradient">clientes dizem</span>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            A confiança de quem cresceu com a gente
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Resultados reais de empresas que confiaram na Trably para transformar seus negócios com tecnologia.
+          <p className="mt-4 text-muted-foreground">
+            Resultados reais de empresas que confiaram na Trably para
+            transformar seus negócios com tecnologia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <Card
               key={i}
-              className="bg-gradient-card border-border/50 shadow-card group hover:-translate-y-1 transition-all duration-300"
+              className="group border-border bg-gradient-card shadow-card transition-colors duration-300 hover:border-primary/40"
             >
-              <CardContent className="p-8 flex flex-col h-full">
-                <Quote className="w-8 h-8 text-primary/30 mb-4" />
+              <CardContent className="flex h-full flex-col p-8">
+                <Quote className="mb-4 h-7 w-7 text-primary/40" />
 
-                <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                  "{t.text}"
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  &ldquo;{t.text}&rdquo;
                 </p>
 
-                <div className="flex items-center gap-1 mb-5">
+                <div className="mb-5 flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star
                       key={j}
-                      className="w-4 h-4 fill-primary text-primary"
+                      className="h-4 w-4 fill-primary text-primary"
                     />
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3 pt-5 border-t border-border/50">
+                <div className="flex items-center gap-3 border-t border-border pt-5">
                   <Avatar className="h-11 w-11 border-2 border-primary/20">
                     <AvatarFallback className="bg-primary/10 text-primary text-sm font-semibold">
                       {t.initials}
