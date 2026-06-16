@@ -51,7 +51,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
           className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          18 anos construindo software que gera resultado
+          18 anos de experiência
         </motion.div>
 
         <motion.h1
@@ -99,7 +99,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
           className="mt-5 flex items-center justify-center gap-2 text-sm text-muted-foreground"
         >
           <ShieldCheck className="h-4 w-4 text-primary" />
-          Orçamento sem compromisso · resposta em até 1 dia útil
+          Orçamento sem compromisso
         </motion.p>
 
         <motion.div
