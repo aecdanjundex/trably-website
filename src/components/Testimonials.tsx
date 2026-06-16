@@ -1,6 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Reveal } from "@/components/motion/Reveal";
 
 const testimonials = [
   {
@@ -37,7 +38,7 @@ const Testimonials = () => {
       className="relative border-t border-border px-6 py-24 sm:py-32"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-2xl text-center">
           <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-primary">
             Clientes
           </span>
@@ -48,13 +49,13 @@ const Testimonials = () => {
             Resultados reais de empresas que confiaram na Trably para
             transformar seus negócios com tecnologia.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {testimonials.map((t, i) => (
+            <Reveal key={i} delay={(i % 3) * 0.08} className="h-full">
             <Card
-              key={i}
-              className="group border-border bg-gradient-card shadow-card transition-colors duration-300 hover:border-primary/40"
+              className="group h-full border-border bg-gradient-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
             >
               <CardContent className="flex h-full flex-col p-8">
                 <Quote className="mb-4 h-7 w-7 text-primary/40" />
@@ -89,6 +90,7 @@ const Testimonials = () => {
                 </div>
               </CardContent>
             </Card>
+            </Reveal>
           ))}
         </div>
       </div>

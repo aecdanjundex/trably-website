@@ -1,4 +1,7 @@
-import { ArrowRight } from "lucide-react";
+"use client";
+
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 interface HeroProps {
@@ -6,36 +9,73 @@ interface HeroProps {
 }
 
 const stats = [
-  { value: "30+", label: "Projetos entregues" },
-  { value: "8 anos", label: "De experiência" },
-  { value: "100%", label: "Foco em resultado" },
+  { value: "18 anos", label: "De experiência" },
+  { value: "+30", label: "Projetos em produção" },
+  { value: "100%", label: "Sob medida" },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 const Hero = ({ onContactClick }: HeroProps) => {
+  const reduce = useReducedMotion();
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+    },
+  };
+
+  const item = {
+    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: EASE },
+    },
+  };
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-grid" />
 
-      <div className="container relative z-10 mx-auto px-6 py-20 text-center">
-        <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="container relative z-10 mx-auto px-6 py-20 text-center"
+      >
+        <motion.div
+          variants={item}
+          className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Engenharia de software sob medida
-        </div>
+          18 anos construindo software que gera resultado
+        </motion.div>
 
-        <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Software de alto nível para
+        <motion.h1
+          variants={item}
+          className="mx-auto max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+        >
+          Transformamos ideias em
           <br className="hidden sm:block" />{" "}
-          <span className="text-gradient">negócios que querem escalar</span>
-        </h1>
+          <span className="text-gradient">produtos digitais que escalam</span>
+        </motion.h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Projetamos e desenvolvemos sistemas, plataformas e aplicações sob
-          medida — da arquitetura ao deploy — com a confiabilidade que o seu
-          negócio precisa para crescer.
-        </p>
+        <motion.p
+          variants={item}
+          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
+        >
+          Há 18 anos projetamos e desenvolvemos sistemas, plataformas e soluções
+          com inteligência artificial — da arquitetura ao deploy. Tecnologia
+          sólida, sob medida e pensada para o crescimento do seu negócio.
+        </motion.p>
 
-        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+        <motion.div
+          variants={item}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        >
           <Button
             size="lg"
             onClick={onContactClick}
@@ -52,9 +92,20 @@ const Hero = ({ onContactClick }: HeroProps) => {
           >
             <a href="#projetos">Ver projetos</a>
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-10">
+        <motion.p
+          variants={item}
+          className="mt-5 flex items-center justify-center gap-2 text-sm text-muted-foreground"
+        >
+          <ShieldCheck className="h-4 w-4 text-primary" />
+          Orçamento sem compromisso · resposta em até 1 dia útil
+        </motion.p>
+
+        <motion.div
+          variants={item}
+          className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-10"
+        >
           {stats.map((stat) => (
             <div key={stat.label}>
               <p className="text-2xl font-bold tracking-tight sm:text-3xl">
@@ -65,8 +116,8 @@ const Hero = ({ onContactClick }: HeroProps) => {
               </p>
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

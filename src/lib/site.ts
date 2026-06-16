@@ -17,6 +17,9 @@ export const siteConfig = {
     "desenvolvimento de software",
     "software sob medida",
     "sistemas personalizados",
+    "inteligência artificial",
+    "agentes autônomos",
+    "automação com IA",
     "landing pages",
     "sites institucionais",
     "aplicações web",
@@ -25,6 +28,11 @@ export const siteConfig = {
     "Trably",
   ],
   services: [
+    {
+      name: "Inteligência Artificial",
+      description:
+        "Soluções com IA e agentes autônomos que automatizam processos, integram sistemas e tomam decisões para escalar a operação.",
+    },
     {
       name: "Landing Pages",
       description:
