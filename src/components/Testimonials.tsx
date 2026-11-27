@@ -6,6 +6,13 @@ import { Card } from "@/components/ui/card";
 
 const testimonials = [
   {
+    name: "José Ronilson Dantas",
+    business: "JAMA Exploration",
+    initials: "JR",
+    role: "Diretor Comercial e Financeiro",
+    text: "A Trably desenvolveu toda a plataforma da JAMA Exploration: o site institucional em três idiomas, o portal do cliente, o portal do fornecedor e o nosso painel interno. Hoje cotações, pedidos e catálogo ficam num só lugar, e nossos clientes acompanham tudo online. A equipe entendeu a operação de mineração e entregou um sistema sob medida, com a nossa cara.",
+  },
+  {
     name: "Pedro",
     business: "Barbearia Real",
     initials: "PR",
@@ -41,9 +48,9 @@ const Testimonials = () => (
         a="A confiança de quem"
         b="cresceu com a gente"
       />
-      <ul className="m-0 grid list-none grid-cols-3 gap-5 p-0 max-[900px]:grid-cols-1">
+      <ul className="m-0 grid list-none grid-cols-2 gap-5 p-0 max-[900px]:grid-cols-1">
         {testimonials.map((t, i) => (
-          <li key={t.name} {...reveal(i)}>
+          <li key={t.name} {...reveal(i % 2)}>
             <Card className="tr-card flex h-full flex-col gap-5 rounded-[10px] border-line bg-card p-7 shadow-none">
               <div className="flex items-center justify-between">
                 <Quote aria-hidden="true" className="tr-card-icon size-8 text-glow" />
