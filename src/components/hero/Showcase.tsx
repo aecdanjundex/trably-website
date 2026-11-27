@@ -282,10 +282,9 @@ function SwapScreen({ t }: { t: T }) {
   );
 }
 
-/** Carteira no estilo das extensões Web3 populares (layout próprio, sem marca de terceiros). */
+/** Carteira Web3 (layout de extensão de navegador) com o tema Trably. */
 function WalletScreen({ t }: { t: T }) {
   const n = useNum();
-  const orange = "#f6851b";
   const actions = [
     { icon: Plus, label: t("wallet.buy") },
     { icon: Repeat, label: t("wallet.swap") },
@@ -298,12 +297,12 @@ function WalletScreen({ t }: { t: T }) {
     { sym: "LINK", name: "Chainlink", amt: 18.5, usd: 263.81, color: "#2a5ada" },
   ];
   return (
-    <div className="mx-auto flex h-full max-w-[360px] flex-col overflow-hidden rounded-[12px] border border-[#3b4046] bg-[#141618] text-[#f2f4f6]">
-      <div className="flex items-center justify-between border-b border-[#2a2e33] px-3 py-2.5">
-        <span className="flex items-center gap-1.5 rounded-full border border-[#3b4046] px-2 py-1 text-[11px] font-semibold">
-          <span aria-hidden="true" className="size-3 rounded-full bg-[#627eea]" />
+    <div className="mx-auto flex h-full max-w-[360px] flex-col overflow-hidden rounded-[12px] border border-line bg-card text-ink">
+      <div className="flex items-center justify-between border-b border-line bg-surface px-3 py-2.5">
+        <span className="flex items-center gap-1.5 rounded-full border border-line-strong bg-card px-2 py-1 text-ink-body text-[11px] font-semibold">
+          <span aria-hidden="true" className="size-3 rounded-full bg-accent" />
           {t("wallet.network")}
-          <ChevronDown aria-hidden="true" className="size-3 text-[#9fa6ae]" />
+          <ChevronDown aria-hidden="true" className="size-3 text-ink-subtle" />
         </span>
         <span className="flex flex-col items-center leading-tight">
           <span className="flex items-center gap-1.5 text-[13px] font-bold">
@@ -313,58 +312,57 @@ function WalletScreen({ t }: { t: T }) {
               className="size-5 rounded-full"
               style={{
                 background:
-                  "conic-gradient(from 40deg, #f5a623 0 25%, #1e8bd6 0 50%, #f15a24 0 70%, #12b886 0 100%)",
+                  "conic-gradient(from 40deg, #3f37c9 0 25%, #9b6ff1 0 50%, #5b52e6 0 70%, #8463ee 0 100%)",
               }}
             />
             {t("wallet.account")}
-            <ChevronDown aria-hidden="true" className="size-3 text-[#9fa6ae]" />
+            <ChevronDown aria-hidden="true" className="size-3 text-ink-subtle" />
           </span>
-          <span className="flex items-center gap-1 text-[10px] text-[#9fa6ae]">
+          <span className="flex items-center gap-1 text-[10px] text-ink-subtle">
             0x7a3F…c91E
             <Copy aria-hidden="true" className="size-2.5" />
           </span>
         </span>
         <span aria-hidden="true" className="flex flex-col gap-[3px] px-1">
-          <span className="size-1 rounded-full bg-[#9fa6ae]" />
-          <span className="size-1 rounded-full bg-[#9fa6ae]" />
-          <span className="size-1 rounded-full bg-[#9fa6ae]" />
+          <span className="size-1 rounded-full bg-ink-subtle" />
+          <span className="size-1 rounded-full bg-ink-subtle" />
+          <span className="size-1 rounded-full bg-ink-subtle" />
         </span>
       </div>
       <div className="flex flex-col items-center gap-0.5 pt-4">
-        <span className="font-body text-[30px] font-bold leading-none">US$ {n(3581.36)}</span>
-        <span className="text-[12px] font-semibold text-[#28a745]">{t("wallet.change")}</span>
+        <span className="font-display text-[34px] font-bold leading-none text-ink">US$ {n(3581.36)}</span>
+        <span className="text-[12px] font-semibold text-accent">{t("wallet.change")}</span>
       </div>
       <div className="flex justify-center gap-4 py-3.5">
         {actions.map((a) => (
           <span key={a.label} className="flex w-12 flex-col items-center gap-1">
             <span
-              className="flex size-9 items-center justify-center rounded-full text-white"
-              style={{ background: orange }}
+              className="flex size-9 items-center justify-center rounded-full bg-accent text-on-accent"
             >
               <a.icon aria-hidden="true" className="size-4" />
             </span>
-            <span className="text-[10px] font-semibold text-[#d6d9dc]">{a.label}</span>
+            <span className="font-display text-[11px] font-semibold uppercase tracking-[1px] text-ink-muted">{a.label}</span>
           </span>
         ))}
       </div>
-      <div className="flex border-b border-[#2a2e33] text-[12px] font-semibold">
-        <span className="flex-1 border-b-2 pb-2 text-center" style={{ borderColor: orange, color: orange }}>
+      <div className="flex border-b border-line font-display text-[13px] font-semibold uppercase tracking-[1.5px]">
+        <span className="flex-1 border-b-2 border-accent pb-2 text-center text-accent">
           {t("wallet.tokens")}
         </span>
-        <span className="flex-1 pb-2 text-center text-[#9fa6ae]">{t("wallet.nfts")}</span>
-        <span className="flex-1 pb-2 text-center text-[#9fa6ae]">{t("wallet.activity")}</span>
+        <span className="flex-1 pb-2 text-center text-ink-subtle">{t("wallet.nfts")}</span>
+        <span className="flex-1 pb-2 text-center text-ink-subtle">{t("wallet.activity")}</span>
       </div>
       <ul className="m-0 flex list-none flex-col p-0">
         {tokens.map((tk) => (
-          <li key={tk.sym} className="flex items-center gap-2.5 border-b border-[#1f2326] px-3 py-2">
+          <li key={tk.sym} className="flex items-center gap-2.5 border-b border-line px-3 py-2 last:border-b-0">
             <Token sym={tk.sym} color={tk.color} size={30} />
             <span className="flex min-w-0 flex-1 flex-col leading-tight">
-              <span className="text-[13px] font-semibold">{tk.name}</span>
-              <span className="text-[11px] text-[#9fa6ae]">
+              <span className="text-[13px] font-semibold text-ink">{tk.name}</span>
+              <span className="text-[11px] text-ink-subtle">
                 {n(tk.amt, tk.amt < 1 ? 4 : 2)} {tk.sym}
               </span>
             </span>
-            <span className="text-[13px] font-semibold">US$ {n(tk.usd)}</span>
+            <span className="text-[13px] font-semibold text-ink">US$ {n(tk.usd)}</span>
           </li>
         ))}
       </ul>
