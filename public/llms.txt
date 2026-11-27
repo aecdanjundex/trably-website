@@ -1,18 +1,28 @@
 # Trably Software
 
-> Engenharia de software sob medida. Projetamos e desenvolvemos sistemas, plataformas e aplicações personalizadas — da arquitetura ao deploy — para negócios que querem escalar.
+> Software sob medida, agentes de IA e consultoria cripto para a regulação do Banco Central. Projetamos e desenvolvemos sistemas, plataformas e aplicações personalizadas — da arquitetura ao deploy.
 
 Trably Software (Trably) é uma empresa de desenvolvimento de software com 18 anos de experiência e foco em soluções sob medida, confiáveis e escaláveis, incluindo inteligência artificial e agentes autônomos. CNPJ 60.510.809/0001-95. Atende clientes no Brasil, em português.
 
 ## Serviços
 
 - **Inteligência Artificial**: soluções com IA e agentes autônomos que automatizam processos, integram sistemas e tomam decisões para escalar a operação.
+- **Consultoria em Regulação Cripto**: adequação de corretoras, custodiantes e intermediárias de ativos virtuais às Resoluções BCB 519, 520 e 521 (em vigor desde 2 de fevereiro de 2026), que regulamentam o marco legal dos criptoativos (Lei 14.478/2022). Inclui autorização como SPSAV, compliance/PLD-FT e a tecnologia da operação.
 - **Landing Pages**: páginas de alta conversão com design moderno, SEO otimizado e performance máxima para capturar leads.
 - **Sites Institucionais**: presença digital profissional que transmite credibilidade e fortalece a identidade da marca.
 - **Sistemas Completos**: soluções sob medida com painéis administrativos, dashboards e integrações com APIs externas.
 - **Agendamento Online**: gestão inteligente de horários para clínicas, barbearias e prestadores de serviço.
 - **dApps & BaaS**: aplicações descentralizadas e infraestrutura bancária digital com segurança e compliance.
 - **Plataformas de Vídeo**: streaming sob demanda com gestão de conteúdo, assinaturas e analytics.
+
+## Como implementar uma corretora cripto do zero
+
+1. Modelo de negócio e enquadramento (intermediação, custódia ou corretora; modalidade de SPSAV).
+2. Estrutura societária, capital, governança e diretores responsáveis (Resolução BCB 520).
+3. Pedido de autorização ao Banco Central (Resolução BCB 519).
+4. Compliance e PLD/FT: KYC/KYB, monitoramento de transações, travel rule e reportes.
+5. Tecnologia: order book ou liquidez integrada, carteiras com custódia segregada, Pix, APIs e back-office.
+6. Operação segura: segurança cibernética, gestão de riscos, auditoria e continuidade.
 
 ## Diferenciais
 
@@ -29,4 +39,5 @@ Trably Software (Trably) é uma empresa de desenvolvimento de software com 18 an
 
 ## Contato
 
+- WhatsApp: +55 (84) 98778-2431 (https://wa.me/5584987782431)
 - Solicitação de orçamento pelo formulário de contato no site.

@@ -1,22 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
+import { navLinks } from "@/components/navLinks";
 import ThemeToggle from "@/components/ThemeToggle";
+import { ContactButton } from "@/components/contact/ContactButton";
+import { WhatsAppIcon } from "@/components/site/icons";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import { whatsappLink } from "@/lib/site";
 
-interface NavbarProps {
-  onContactClick: () => void;
-}
 
-const links = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#depoimentos", label: "Clientes" },
-];
+const linkCls =
+  "font-display text-base font-semibold uppercase tracking-[2px] text-ink-body no-underline transition-colors hover:text-accent";
 
-const Navbar = ({ onContactClick }: NavbarProps) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,54 +28,83 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled ? "border-line bg-ground/85 backdrop-blur-xl" : "border-transparent bg-ground",
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <Link
-          href="/"
-          aria-label="Trably — página inicial"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary text-sm font-bold text-primary-foreground">
-            T
-          </span>
-          Trably
+      <nav
+        aria-label="Principal"
+        className="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-6 px-8 max-[760px]:px-4"
+      >
+        <Link href="/" aria-label="Trably Software — página inicial" className="no-underline">
+          <Logo size={34} animated />
         </Link>
 
-        <div className="flex items-center gap-1 sm:gap-2">
-          <div className="mr-2 hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-foreground"
-              >
-                {link.label}
+        <ul className="m-0 hidden list-none items-center gap-7 p-0 lg:flex">
+          {navLinks.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className={linkCls}>
+                {l.label}
               </a>
-            ))}
-          </div>
+            </li>
+          ))}
+        </ul>
 
+        <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
-
-          <button
-            onClick={onContactClick}
-            className="ml-1 rounded-md border border-border px-4 py-2 text-sm font-semibold transition-colors hover:bg-secondary"
-          >
-            Contato
-          </button>
+          <ContactButton size="nav" arrow={false}>
+            Orçamento
+          </ContactButton>
         </div>
-      </div>
-    </motion.nav>
+
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Abrir menu"
+                className="size-12 border-line-strong bg-card text-ink [&_svg]:size-6"
+              >
+                <Menu aria-hidden="true" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="flex w-[min(100vw,334px)] flex-col gap-4 border-line bg-ground">
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <Logo size={44} className="self-start" />
+              <ul className="m-0 flex list-none flex-col p-0">
+                {navLinks.map((l) => (
+                  <li key={l.href}>
+                    <SheetClose asChild>
+                      <a
+                        href={l.href}
+                        className={cn(linkCls, "flex min-h-[54px] items-center text-xl")}
+                      >
+                        {l.label}
+                      </a>
+                    </SheetClose>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto flex flex-col gap-3">
+                <SheetClose asChild>
+                  <ContactButton>Solicitar orçamento</ContactButton>
+                </SheetClose>
+                <Button asChild variant="brandOutline" size="xl">
+                  <a href={whatsappLink("Olá! Vim pelo site da Trably.")} target="_blank" rel="noopener">
+                    <WhatsAppIcon className="text-eyebrow" />
+                    WhatsApp
+                  </a>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </nav>
+    </header>
   );
 };
 

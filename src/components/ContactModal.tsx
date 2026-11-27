@@ -1,3 +1,5 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -7,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowRight } from "lucide-react";
+import { whatsappLink } from "@/lib/site";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Máximo de 100 caracteres"),
@@ -28,9 +31,10 @@ interface ContactModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
+/** Sem back-end de leads por enquanto: abre o WhatsApp com os dados já preenchidos. */
 async function handleSubmitContact(data: ContactFormValues) {
-  // TODO: implementar envio real dos dados
-  console.log("Dados do formulário:", data);
+  const text = `Olá! Vim pelo site da Trably e quero um orçamento.\n\nNome: ${data.name}\nE-mail: ${data.email}\nTelefone: ${data.phone}`;
+  window.open(whatsappLink(text), "_blank", "noopener");
 }
 
 const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
@@ -52,10 +56,15 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md border-border bg-card">
+      <DialogContent className="rounded-[10px] border-line bg-card sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold">Fale com a equipe</DialogTitle>
-          <DialogDescription>Preencha seus dados e entraremos em contato.</DialogDescription>
+          <p className="ds-eyebrow text-sm">Orçamento gratuito</p>
+          <DialogTitle className="font-display text-[32px] font-bold uppercase leading-none text-ink">
+            Fale com a equipe
+          </DialogTitle>
+          <DialogDescription className="text-ink-muted">
+            Preencha seus dados e continuamos a conversa pelo WhatsApp.
+          </DialogDescription>
         </DialogHeader>
 
         <Form {...form}>
@@ -65,7 +74,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nome</FormLabel>
+                  <FormLabel className="ds-label">Nome</FormLabel>
                   <FormControl>
                     <Input placeholder="Seu nome completo" {...field} />
                   </FormControl>
@@ -79,7 +88,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="ds-label">Email</FormLabel>
                   <FormControl>
                     <Input type="email" placeholder="seu@email.com" {...field} />
                   </FormControl>
@@ -93,7 +102,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Telefone</FormLabel>
+                  <FormLabel className="ds-label">Telefone</FormLabel>
                   <FormControl>
                     <Input placeholder="+55 11999999999" {...field} />
                   </FormControl>
@@ -120,12 +129,9 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
               )}
             />
 
-            <Button
-              type="submit"
-              className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
-            >
+            <Button type="submit" variant="brand" size="xl" className="w-full">
               Enviar
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight aria-hidden="true" className="tr-arrow" />
             </Button>
           </form>
         </Form>

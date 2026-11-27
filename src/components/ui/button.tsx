@@ -17,12 +17,19 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        /* Estilo display do design system (mesmo do site JAMA) */
+        brand:
+          "tr-cta border-0 bg-accent font-display font-bold uppercase tracking-[2px] text-on-accent hover:bg-accent-hover",
+        brandOutline:
+          "tr-cta border-2 border-glow bg-transparent font-display font-bold uppercase tracking-[2px] text-ink hover:bg-card",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
+        nav: "min-h-11 px-[18px] text-base",
+        xl: "min-h-[52px] gap-2.5 px-[26px] text-lg [&_svg]:size-5 max-[760px]:w-full",
       },
     },
     defaultVariants: {

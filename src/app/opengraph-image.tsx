@@ -1,9 +1,11 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
+export const alt = `${siteConfig.name} — software sob medida, IA e consultoria cripto`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const letters = ["#3f37c9", "#4c44dc", "#5b52e6", "#6f5bea", "#8463ee", "#9b6ff1"];
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -15,50 +17,30 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "80px",
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% -10%, #3a3fd6 0%, #0b0e16 60%)",
-          color: "#f1f3f9",
+          padding: "72px 80px",
+          background: "radial-gradient(ellipse 70% 70% at 90% 0%, #2a1f5c 0%, #0b0e16 65%)",
+          color: "#f1f3fa",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "linear-gradient(135deg, #4f55e8, #7c5cf0)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 38,
-              fontWeight: 700,
-              color: "#fff",
-            }}
-          >
-            T
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", fontSize: 88, fontWeight: 800, lineHeight: 0.9 }}>
+            {"TRABLY".split("").map((ch, i) => (
+              <span key={ch} style={{ color: letters[i] }}>
+                {ch}
+              </span>
+            ))}
           </div>
-          <span style={{ fontSize: 34, fontWeight: 600 }}>
-            {siteConfig.name}
-          </span>
+          <span style={{ fontSize: 22, letterSpacing: 12, marginTop: 8 }}>SOFTWARE</span>
         </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <span
-            style={{
-              fontSize: 64,
-              fontWeight: 700,
-              lineHeight: 1.1,
-              maxWidth: 900,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {siteConfig.tagline}
+        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+          <span style={{ fontSize: 22, letterSpacing: 6, color: "#b9a3f2", fontWeight: 600 }}>
+            SOFTWARE · IA · CONSULTORIA CRIPTO
           </span>
-          <span style={{ fontSize: 28, color: "#9aa3b8", maxWidth: 820 }}>
-            Engenharia de software sob medida — da arquitetura ao deploy.
+          <span style={{ fontSize: 76, fontWeight: 700, lineHeight: 1, textTransform: "uppercase", maxWidth: 1000 }}>
+            Ideias viram <span style={{ color: "#7a83f2", marginLeft: 18 }}>produtos que escalam</span>
           </span>
+          <div style={{ width: 96, height: 6, background: "#8a5ad8" }} />
         </div>
       </div>
     ),

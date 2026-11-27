@@ -1,8 +1,12 @@
-import { ArrowRight, CheckCircle, MessageSquare, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CheckCircle, MessageSquare, Zap } from "lucide-react";
 import Image from "next/image";
 import ctaImage from "@/assets/cta-image.png";
-import { Reveal } from "@/components/motion/Reveal";
+import { ContactButton } from "@/components/contact/ContactButton";
+import { reveal } from "@/components/motion/reveal";
+import { WhatsAppIcon } from "@/components/site/icons";
+import { Container } from "@/components/site/ui";
+import { Button } from "@/components/ui/button";
+import { whatsappLink, siteConfig } from "@/lib/site";
 
 const highlights = [
   { icon: Zap, text: "Desenvolvimento ágil, com entregas previsíveis" },
@@ -10,72 +14,58 @@ const highlights = [
   { icon: MessageSquare, text: "Comunicação transparente em cada etapa" },
 ];
 
-interface CTAProps {
-  onContactClick: () => void;
-}
-
-const CTA = ({ onContactClick }: CTAProps) => {
-  return (
-    <section className="border-t border-border py-24 sm:py-32">
-      <div className="container mx-auto px-6">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-card shadow-elevated">
-            <div className="absolute inset-0 bg-gradient-hero opacity-70" />
-
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2">
-              <div className="flex flex-col justify-center p-10 sm:p-14">
-                <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-                  Vamos conversar
-                </p>
-                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                  Pronto para tirar seu projeto do papel?
-                </h2>
-                <p className="mb-8 max-w-md leading-relaxed text-muted-foreground">
-                  Conte sua ideia e desenhamos a solução ideal para o seu
-                  negócio. Da estratégia ao deploy, com 18 anos de experiência
-                  cuidando de cada detalhe.
-                </p>
-
-                <ul className="mb-8 space-y-3">
-                  {highlights.map((item) => (
-                    <li
-                      key={item.text}
-                      className="flex items-center gap-3 text-sm text-muted-foreground"
-                    >
-                      <item.icon className="h-4 w-4 shrink-0 text-primary" />
-                      {item.text}
-                    </li>
-                  ))}
-                </ul>
-
-                <div>
-                  <Button
-                    size="lg"
-                    onClick={onContactClick}
-                    className="bg-gradient-primary px-8 py-6 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    Falar com a equipe
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="relative hidden lg:block">
-                <Image
-                  src={ctaImage}
-                  alt="Equipe da Trably desenvolvendo soluções digitais"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-card via-card/40 to-transparent" />
-              </div>
-            </div>
+const CTA = () => (
+  <section id="contato" aria-labelledby="contato-heading" className="border-t border-line py-[110px] max-[760px]:py-16">
+    <Container>
+      <div
+        {...reveal(0, "rise")}
+        className="ds-hatch grid grid-cols-2 overflow-hidden rounded-[10px] border border-line max-[900px]:grid-cols-1"
+      >
+        <div className="flex flex-col gap-5 p-12 max-[760px]:p-6">
+          <p className="ds-eyebrow">Vamos conversar</p>
+          <h2
+            id="contato-heading"
+            className="m-0 text-[clamp(40px,5vw,64px)] font-bold uppercase leading-none text-ink"
+          >
+            Pronto para tirar seu projeto <span className="text-accent">do papel?</span>
+          </h2>
+          <div aria-hidden="true" className="h-1 w-16 bg-glow" {...reveal(1, "rule")} />
+          <p className="m-0 max-w-md text-[19px] leading-[1.6] text-ink-muted">
+            Conte sua ideia e desenhamos a solução ideal para o seu negócio. Da estratégia ao deploy,
+            com 18 anos de experiência cuidando de cada detalhe.
+          </p>
+          <ul className="m-0 flex list-none flex-col gap-3 p-0">
+            {highlights.map((h, i) => (
+              <li key={h.text} {...reveal(i + 2)} className="flex items-center gap-3 text-base text-ink-body">
+                <h.icon aria-hidden="true" className="size-5 shrink-0 text-accent" />
+                {h.text}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-2 flex flex-wrap gap-4">
+            <ContactButton>Falar com a equipe</ContactButton>
+            <Button asChild variant="brandOutline" size="xl">
+              <a href={whatsappLink("Olá! Vim pelo site da Trably.")} target="_blank" rel="noopener">
+                <WhatsAppIcon className="text-eyebrow" />
+                {siteConfig.phone}
+              </a>
+            </Button>
           </div>
-        </Reveal>
+        </div>
+        <div className="relative min-h-[320px] max-[900px]:hidden">
+          <Image
+            src={ctaImage}
+            alt="Equipe da Trably desenvolvendo soluções digitais"
+            fill
+            sizes="(max-width: 900px) 0px, 600px"
+            className="object-cover"
+            placeholder="blur"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ground via-ground/30 to-transparent" />
+        </div>
       </div>
-    </section>
-  );
-};
+    </Container>
+  </section>
+);
 
 export default CTA;
