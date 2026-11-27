@@ -1,125 +1,143 @@
-"use client";
-
-import { ArrowRight, ShieldCheck } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { Bot, Check, ShieldCheck } from "lucide-react";
+import type { CSSProperties } from "react";
+import { ContactButton } from "@/components/contact/ContactButton";
+import { WhatsAppIcon } from "@/components/site/icons";
+import { Container, GridBackground } from "@/components/site/ui";
 import { Button } from "@/components/ui/button";
-
-interface HeroProps {
-  onContactClick: () => void;
-}
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { whatsappLink } from "@/lib/site";
 
 const stats = [
-  { value: "18 anos", label: "De experiência" },
-  { value: "+30", label: "Projetos em produção" },
-  { value: "100%", label: "Sob medida" },
+  { value: "18", unit: "anos", label: "de engenharia de software" },
+  { value: "+30", unit: "", label: "projetos em produção" },
+  { value: "100%", unit: "", label: "sob medida" },
 ];
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const steps = [
+  { label: "Lead recebido pelo WhatsApp", state: "done" },
+  { label: "Agente qualifica e consulta o CRM", state: "done" },
+  { label: "Proposta gerada e enviada", state: "on" },
+  { label: "Follow-up agendado", state: "next" },
+] as const;
 
-const Hero = ({ onContactClick }: HeroProps) => {
-  const reduce = useReducedMotion();
+const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.12, delayChildren: 0.05 },
-    },
-  };
-
-  const item = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: EASE },
-    },
-  };
-
+/** Mockup do agente de IA trabalhando (decorativo). */
+function AgentPanel() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute inset-0 bg-grid" />
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="container relative z-10 mx-auto px-6 py-20 text-center"
-      >
-        <motion.div
-          variants={item}
-          className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          18 anos de experiência
-        </motion.div>
-
-        <motion.h1
-          variants={item}
-          className="mx-auto max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
-        >
-          Transformamos ideias em
-          <br className="hidden sm:block" />{" "}
-          <span className="text-gradient">produtos digitais que escalam</span>
-        </motion.h1>
-
-        <motion.p
-          variants={item}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
-        >
-          Há 18 anos projetamos e desenvolvemos sistemas, plataformas e soluções
-          com inteligência artificial — da arquitetura ao deploy. Tecnologia
-          sólida, sob medida e pensada para o crescimento do seu negócio.
-        </motion.p>
-
-        <motion.div
-          variants={item}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
-        >
-          <Button
-            size="lg"
-            onClick={onContactClick}
-            className="bg-gradient-primary px-8 py-6 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+    <Card
+      aria-hidden="true"
+      className="tr-in-rise w-full overflow-hidden rounded-[10px] border-line bg-card shadow-[var(--shadow-modal)]"
+      style={d(500)}
+    >
+      <div className="flex items-center justify-between border-b border-line bg-surface px-5 py-3.5">
+        <span className="flex items-center gap-2.5 font-display text-[15px] font-bold uppercase tracking-[2px] text-ink">
+          <Bot className="size-[18px] text-accent" />
+          Agente comercial
+        </span>
+        <span className="flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[2px] text-eyebrow">
+          <span className="tr-pulse size-2 rounded-full bg-accent" />
+          Online
+        </span>
+      </div>
+      <ol className="m-0 flex list-none flex-col gap-0 p-5">
+        {steps.map((s, i) => (
+          <li
+            key={s.label}
+            className="tr-in-rise relative flex items-center gap-3.5 py-2.5"
+            style={d(700 + i * 160)}
           >
-            Solicitar orçamento
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-border px-8 py-6 text-base font-semibold transition-colors hover:bg-secondary"
-          >
-            <a href="#projetos">Ver projetos</a>
-          </Button>
-        </motion.div>
+            <span
+              className={cn(
+                "flex size-7 shrink-0 items-center justify-center rounded-full border-2",
+                s.state === "done" && "border-accent bg-accent text-on-accent",
+                s.state === "on" && "tr-pulse border-accent text-accent",
+                s.state === "next" && "border-line-strong text-ink-subtle",
+              )}
+            >
+              {s.state === "done" ? <Check className="size-4" /> : null}
+              {s.state === "on" ? <span className="size-2.5 rounded-full bg-accent" /> : null}
+            </span>
+            <span
+              className={cn(
+                "text-[15px]",
+                s.state === "next" ? "text-ink-subtle" : "text-ink-body",
+                s.state === "on" && "font-semibold text-ink",
+              )}
+            >
+              {s.label}
+            </span>
+          </li>
+        ))}
+      </ol>
+      <div className="border-t border-line px-5 py-4 font-mono text-[13px] text-ink-muted">
+        <span className="text-accent">$</span> proposta.enviar(cliente)
+        <span className="tr-caret ml-0.5 inline-block h-[1em] w-2 translate-y-[2px] bg-accent" />
+      </div>
+    </Card>
+  );
+}
 
-        <motion.p
-          variants={item}
-          className="mt-5 flex items-center justify-center gap-2 text-sm text-muted-foreground"
+const Hero = () => (
+  <section id="inicio" aria-labelledby="hero-heading" className="relative overflow-hidden">
+    <GridBackground />
+    <Container className="flex flex-wrap items-center gap-14 py-[110px] max-[760px]:py-16">
+      <div className="flex min-w-0 flex-[1_1_560px] flex-col gap-6">
+        <p className="tr-in-fade ds-eyebrow">Software · IA · Consultoria cripto</p>
+        {/* h1 e lead não animam: são o LCP */}
+        <h1
+          id="hero-heading"
+          className="m-0 text-[clamp(52px,7vw,96px)] font-bold uppercase leading-[0.95] text-ink [word-break:break-word]"
         >
-          <ShieldCheck className="h-4 w-4 text-primary" />
-          Orçamento sem compromisso
-        </motion.p>
+          Ideias viram <span className="text-accent">produtos que escalam</span>
+        </h1>
+        <div aria-hidden="true" className="tr-in-draw h-[5px] w-[72px] bg-glow" style={d(250)} />
+        <p className="m-0 max-w-[580px] text-[21px] leading-[1.6] text-ink-muted">
+          Há 18 anos projetamos e desenvolvemos sistemas, plataformas e agentes de IA sob medida —
+          da arquitetura ao deploy — e damos consultoria para operar cripto dentro da regulação do
+          Banco Central.
+        </p>
+        <div className="tr-in-rise mt-2 flex flex-wrap gap-4" style={d(450)}>
+          <ContactButton>Solicitar orçamento</ContactButton>
+          <Button asChild variant="brandOutline" size="xl">
+            <a href={whatsappLink("Olá! Vim pelo site da Trably.")} target="_blank" rel="noopener">
+              <WhatsAppIcon className="text-eyebrow" />
+              WhatsApp
+            </a>
+          </Button>
+        </div>
+        <p className="tr-in-fade m-0 flex items-center gap-2 text-sm text-ink-subtle" style={d(600)}>
+          <ShieldCheck aria-hidden="true" className="size-4 text-accent" />
+          Orçamento gratuito e sem compromisso
+        </p>
+      </div>
+      <div className="flex min-w-0 max-w-[460px] flex-[1_1_360px]">
+        <AgentPanel />
+      </div>
+    </Container>
 
-        <motion.div
-          variants={item}
-          className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6 border-t border-border pt-10"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-2xl font-bold tracking-tight sm:text-3xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-                {stat.label}
-              </p>
+    <div className="border-y border-line bg-surface">
+      <Container>
+        <dl className="m-0 grid grid-cols-3 divide-x divide-line max-[760px]:grid-cols-1 max-[760px]:divide-x-0 max-[760px]:divide-y">
+          {stats.map((s) => (
+            <div key={s.label} className="flex items-baseline gap-3 px-6 py-7 first:pl-0 max-[760px]:px-0">
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="m-0 flex items-baseline gap-3">
+                <span className="font-display text-[44px] font-bold leading-none text-ink">
+                  {s.value}
+                  {s.unit ? <span className="ml-1.5 text-2xl uppercase text-accent">{s.unit}</span> : null}
+                </span>
+                <span aria-hidden="true" className="font-display text-sm font-semibold uppercase tracking-[2px] text-label">
+                  {s.label}
+                </span>
+              </dd>
             </div>
           ))}
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
+        </dl>
+      </Container>
+    </div>
+  </section>
+);
 
 export default Hero;

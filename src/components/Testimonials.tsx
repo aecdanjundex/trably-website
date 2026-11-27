@@ -1,7 +1,8 @@
-import { Star, Quote } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Quote, Star } from "lucide-react";
+import { reveal } from "@/components/motion/reveal";
+import { Container, SectionHead } from "@/components/site/ui";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Reveal } from "@/components/motion/Reveal";
+import { Card } from "@/components/ui/card";
 
 const testimonials = [
   {
@@ -10,7 +11,6 @@ const testimonials = [
     initials: "PR",
     role: "Proprietário",
     text: "A Trably transformou completamente a gestão da minha barbearia. Antes eu perdia clientes por falta de organização nos agendamentos. Hoje, com o sistema personalizado que desenvolveram, meus clientes agendam online com facilidade e recebem notificações automáticas. Reduzi as faltas em 70% e minha agenda está sempre cheia. Foi o melhor investimento que fiz pro meu negócio.",
-    rating: 5,
   },
   {
     name: "Rômulo",
@@ -18,7 +18,6 @@ const testimonials = [
     initials: "RF",
     role: "Diretor Comercial",
     text: "Precisávamos de uma presença digital profissional para captar clientes através de tráfego pago. A Trably criou uma landing page que converte de verdade. Em menos de dois meses, triplicamos o número de contatos qualificados e nosso custo por lead caiu pela metade. A equipe entendeu exatamente o que precisávamos e entregou além das expectativas.",
-    rating: 5,
   },
   {
     name: "João",
@@ -26,76 +25,58 @@ const testimonials = [
     initials: "JO",
     role: "Fundador da Comunidade",
     text: "Criar um marketplace de NFTs do zero parecia impossível até conhecer a Trably. Eles desenvolveram toda a plataforma de minting e negociação de NFTs para minha comunidade. O sistema é rápido, seguro e intuitivo. Conseguimos lançar nossa coleção inicial com sucesso e hoje temos uma comunidade ativa negociando dentro da plataforma. Recomendo demais!",
-    rating: 5,
   },
 ];
 
-const Testimonials = () => {
-  return (
-    <section
-      id="depoimentos"
-      aria-labelledby="depoimentos-heading"
-      className="relative border-t border-border px-6 py-24 sm:py-32"
-    >
-      <div className="relative z-10 mx-auto max-w-6xl">
-        <Reveal className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-primary">
-            Clientes
-          </span>
-          <h2 id="depoimentos-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
-            A confiança de quem cresceu com a gente
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Resultados reais de empresas que confiaram na Trably para
-            transformar seus negócios com tecnologia.
-          </p>
-        </Reveal>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={i} delay={(i % 3) * 0.08} className="h-full">
-            <Card
-              className="group h-full border-border bg-gradient-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
-            >
-              <CardContent className="flex h-full flex-col p-8">
-                <Quote className="mb-4 h-7 w-7 text-primary/40" />
-
-                <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-
-                <div className="mb-5 flex items-center gap-1">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star
-                      key={j}
-                      className="h-4 w-4 fill-primary text-primary"
-                    />
+const Testimonials = () => (
+  <section
+    id="depoimentos"
+    aria-labelledby="depoimentos-heading"
+    className="border-t border-line py-[110px] max-[760px]:py-16"
+  >
+    <Container className="flex flex-col gap-12">
+      <SectionHead
+        id="depoimentos-heading"
+        eyebrow="Clientes"
+        a="A confiança de quem"
+        b="cresceu com a gente"
+      />
+      <ul className="m-0 grid list-none grid-cols-3 gap-5 p-0 max-[900px]:grid-cols-1">
+        {testimonials.map((t, i) => (
+          <li key={t.name} {...reveal(i)}>
+            <Card className="tr-card flex h-full flex-col gap-5 rounded-[10px] border-line bg-card p-7 shadow-none">
+              <div className="flex items-center justify-between">
+                <Quote aria-hidden="true" className="tr-card-icon size-8 text-glow" />
+                <span className="flex gap-1" role="img" aria-label="5 de 5 estrelas">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <Star key={j} aria-hidden="true" className="size-4 fill-accent text-accent" />
                   ))}
+                </span>
+              </div>
+              <blockquote className="m-0 flex-1 text-[17px] leading-[1.6] text-ink-body">
+                &ldquo;{t.text}&rdquo;
+              </blockquote>
+              <div className="flex items-center gap-3 border-t border-line pt-5">
+                <Avatar className="size-11 border-2 border-glow">
+                  <AvatarFallback className="bg-surface font-display font-bold text-accent">
+                    {t.initials}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="m-0 font-display text-lg font-bold uppercase tracking-[1px] text-ink">
+                    {t.name}
+                  </p>
+                  <p className="m-0 text-sm text-ink-subtle">
+                    {t.role} · {t.business}
+                  </p>
                 </div>
-
-                <div className="flex items-center gap-3 border-t border-border pt-5">
-                  <Avatar className="h-11 w-11 border-2 border-primary/20">
-                    <AvatarFallback className="bg-primary/10 text-primary text-sm font-semibold">
-                      {t.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold text-sm text-foreground">
-                      {t.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {t.role} · {t.business}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
+              </div>
             </Card>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </section>
+);
 
 export default Testimonials;

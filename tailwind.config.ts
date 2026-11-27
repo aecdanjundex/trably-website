@@ -11,13 +11,36 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-barlow-condensed)", "Barlow Condensed", "Arial Narrow", "sans-serif"],
+        body: ["var(--font-barlow)", "Barlow", "Arial", "sans-serif"],
+        sans: ["var(--font-barlow)", "Barlow", "Arial", "sans-serif"],
+      },
       colors: {
+        ground: "hsl(var(--ground) / <alpha-value>)",
+        surface: "hsl(var(--surface) / <alpha-value>)",
+        line: {
+          DEFAULT: "hsl(var(--line) / <alpha-value>)",
+          strong: "hsl(var(--line-strong) / <alpha-value>)",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink) / <alpha-value>)",
+          body: "hsl(var(--ink-body) / <alpha-value>)",
+          muted: "hsl(var(--ink-muted) / <alpha-value>)",
+          subtle: "hsl(var(--ink-subtle) / <alpha-value>)",
+        },
+        "accent-hover": "hsl(var(--accent-hover) / <alpha-value>)",
+        "on-accent": "hsl(var(--on-accent) / <alpha-value>)",
+        eyebrow: "hsl(var(--eyebrow) / <alpha-value>)",
+        label: "hsl(var(--label) / <alpha-value>)",
+        glow: "hsl(var(--glow) / <alpha-value>)",
+        deep: "hsl(var(--deep) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -40,7 +63,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
+          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -48,7 +71,7 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
+          DEFAULT: "hsl(var(--card) / <alpha-value>)",
           foreground: "hsl(var(--card-foreground))",
         },
         sidebar: {

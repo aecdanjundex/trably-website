@@ -1,26 +1,26 @@
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { Logo } from "@/components/Logo";
+import { GridBackground } from "@/components/site/ui";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="relative z-10 px-6 text-center">
-        <p className="text-7xl font-bold tracking-tight text-gradient">404</p>
-        <h1 className="mt-4 text-2xl font-bold tracking-tight">
-          Página não encontrada
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          A página que você procura não existe ou foi movida.
-        </p>
-        <Link
-          href="/"
-          className="mt-8 inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-secondary"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Voltar ao início
-        </Link>
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ground">
+      <GridBackground />
+      <div className="relative z-10 flex flex-col items-center gap-5 px-6 text-center">
+        <Logo size={48} />
+        <p className="m-0 font-display text-[clamp(96px,16vw,180px)] font-bold leading-none text-accent">404</p>
+        <h1 className="m-0 text-[clamp(32px,4vw,48px)] font-bold uppercase leading-none">Página não encontrada</h1>
+        <div aria-hidden="true" className="h-1 w-16 bg-glow" />
+        <p className="m-0 text-lg text-ink-muted">A página que você procura não existe ou foi movida.</p>
+        <Button asChild variant="brandOutline" size="xl" className="mt-2">
+          <Link href="/">
+            <ArrowLeft aria-hidden="true" />
+            Voltar ao início
+          </Link>
+        </Button>
       </div>
-    </div>
+    </main>
   );
 }

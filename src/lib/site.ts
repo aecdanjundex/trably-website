@@ -9,14 +9,28 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://trably.com.br",
   locale: "pt_BR",
   description:
-    "Engenharia de software sob medida: desenvolvemos sistemas, plataformas e aplicações personalizadas — da arquitetura ao deploy — para negócios que querem escalar.",
+    "Software sob medida, agentes de IA e consultoria cripto para a regulação do Banco Central (Resoluções BCB 519, 520 e 521). 18 anos desenvolvendo sistemas e plataformas — da arquitetura ao deploy.",
   tagline: "Software de alto nível para negócios que querem escalar",
   email: "contato@trably.com.br",
+  whatsapp: "5584987782431",
+  phone: "+55 (84) 98778-2431",
+  telephone: "+5584987782431",
   cnpj: "60.510.809/0001-95",
   keywords: [
     "desenvolvimento de software",
     "software sob medida",
     "sistemas personalizados",
+    "consultoria cripto",
+    "regulamentação cripto Banco Central",
+    "marco legal dos criptoativos",
+    "Lei 14.478/2022",
+    "SPSAV",
+    "Resolução BCB 519",
+    "Resolução BCB 520",
+    "Resolução BCB 521",
+    "como montar uma corretora cripto",
+    "corretora de criptomoedas do zero",
+    "prestadora de serviços de ativos virtuais",
     "inteligência artificial",
     "agentes autônomos",
     "automação com IA",
@@ -32,6 +46,11 @@ export const siteConfig = {
       name: "Inteligência Artificial",
       description:
         "Soluções com IA e agentes autônomos que automatizam processos, integram sistemas e tomam decisões para escalar a operação.",
+    },
+    {
+      name: "Consultoria em Regulação Cripto",
+      description:
+        "Consultoria para empresas que operam ou querem operar com criptoativos se adequarem às Resoluções BCB 519, 520 e 521, em vigor desde fevereiro de 2026, que regulamentam o marco legal dos criptoativos (Lei 14.478/2022) — da autorização como SPSAV à tecnologia de uma corretora cripto.",
     },
     {
       name: "Landing Pages",
@@ -68,6 +87,9 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
+export const whatsappLink = (text?: string) =>
+  `https://wa.me/${siteConfig.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
 /** Frequently asked questions — rendered on the page and exposed as FAQPage JSON-LD. */
 export const faq = [
   {
@@ -81,6 +103,16 @@ export const faq = [
       "Sim. Projetamos cada solução a partir das necessidades do seu negócio — da arquitetura ao deploy — sem depender de templates engessados, garantindo escalabilidade e manutenção a longo prazo.",
   },
   {
+    question: "Vocês fazem consultoria sobre a regulamentação cripto do Banco Central?",
+    answer:
+      "Sim. Damos consultoria para exchanges, custodiantes, intermediários e empresas que querem operar com criptoativos no Brasil: leitura do marco legal (Lei 14.478/2022) e das Resoluções BCB 519, 520 e 521 — em vigor desde 2 de fevereiro de 2026 — para prestadoras de serviços de ativos virtuais (SPSAV), diagnóstico de aderência, plano de adequação e a tecnologia necessária (KYC, prevenção à lavagem de dinheiro, segregação patrimonial e reporte).",
+  },
+  {
+    question: "Como implementar uma corretora cripto do zero?",
+    answer:
+      "Em seis etapas: definir o modelo de negócio e o enquadramento (intermediária, custodiante ou corretora); montar a estrutura societária, o capital e a governança exigidos; pedir a autorização ao Banco Central como SPSAV (Resoluções BCB 519 e 520); implantar compliance e PLD/FT (KYC/KYB, monitoramento e reporte); construir a tecnologia (order book ou liquidez integrada, carteiras com custódia segregada, Pix e APIs); e operar com segurança cibernética, gestão de riscos e auditoria. Acompanhamos todas as etapas, da regulação ao código.",
+  },
+  {
     question: "Existe suporte depois do lançamento?",
     answer:
       "Sim. Oferecemos suporte contínuo pós-lançamento, com monitoramento, correções e evolução do produto conforme o seu negócio cresce.",
@@ -88,7 +120,7 @@ export const faq = [
   {
     question: "Como funciona o orçamento?",
     answer:
-      "É gratuito e sem compromisso. Você descreve seu projeto pelo formulário de contato e retornamos com uma proposta detalhada, escopo e prazos.",
+      "É gratuito e sem compromisso. Você descreve seu projeto pelo formulário de contato ou pelo WhatsApp +55 (84) 98778-2431 e retornamos com uma proposta detalhada, escopo e prazos.",
   },
   {
     question: "Quais tecnologias vocês utilizam?",
