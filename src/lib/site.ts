@@ -11,7 +11,7 @@ export const siteConfig = {
   description:
     "Software sob medida, agentes de IA e consultoria cripto para a regulação do Banco Central (Resoluções BCB 519, 520 e 521). 18 anos desenvolvendo sistemas e plataformas — da arquitetura ao deploy.",
   tagline: "Software de alto nível para negócios que querem escalar",
-  email: "contato@trably.com.br",
+  email: "aecio@trably.com.br",
   whatsapp: "5584987782431",
   phone: "+55 (84) 98778-2431",
   telephone: "+5584987782431",
