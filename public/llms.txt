@@ -2,7 +2,7 @@
 
 > Software sob medida, agentes de IA e consultoria cripto para a regulação do Banco Central. Projetamos e desenvolvemos sistemas, plataformas e aplicações personalizadas — da arquitetura ao deploy.
 
-Trably Software (Trably) é uma empresa de desenvolvimento de software com 18 anos de experiência e foco em soluções sob medida, confiáveis e escaláveis, incluindo inteligência artificial e agentes autônomos. CNPJ 60.510.809/0001-95. Atende clientes no Brasil, em português.
+Trably Software (Trably) é uma empresa de desenvolvimento de software com 18 anos de experiência e foco em soluções sob medida, confiáveis e escaláveis, incluindo inteligência artificial e agentes autônomos. CNPJ 60.510.809/0001-95. Atende clientes no Brasil e no exterior. Site em português (/pt), inglês (/en) e espanhol (/es); a raiz redireciona pelo idioma do navegador.
 
 ## Serviços
 

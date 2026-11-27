@@ -1,13 +1,20 @@
 import { ImageResponse } from "next/og";
-import { siteConfig } from "@/lib/site";
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
-export const alt = `${siteConfig.name} — software sob medida, IA e consultoria cripto`;
+export const alt = "Trably Software";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const letters = ["#3f37c9", "#4c44dc", "#5b52e6", "#6f5bea", "#8463ee", "#9b6ff1"];
 
-export default function OpengraphImage() {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function OpengraphImage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale as (typeof routing.locales)[number] });
   return new ImageResponse(
     (
       <div
@@ -35,10 +42,10 @@ export default function OpengraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
           <span style={{ fontSize: 22, letterSpacing: 6, color: "#b9a3f2", fontWeight: 600 }}>
-            SOFTWARE · IA · CONSULTORIA CRIPTO
+            {t("meta.ogEyebrow")}
           </span>
           <span style={{ fontSize: 76, fontWeight: 700, lineHeight: 1, textTransform: "uppercase", maxWidth: 1000 }}>
-            Ideias viram <span style={{ color: "#7a83f2", marginLeft: 18 }}>produtos que escalam</span>
+            {t("hero.h1a")} <span style={{ color: "#7a83f2", marginLeft: 18 }}>{t("hero.h1b")}</span>
           </span>
           <div style={{ width: 96, height: 6, background: "#8a5ad8" }} />
         </div>

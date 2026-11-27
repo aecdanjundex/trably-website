@@ -1,0 +1,560 @@
+{
+  "meta": {
+    "tagline": "Software de alto nivel para empresas que quieren escalar",
+    "description": "Software a medida, agentes de IA y consultoría cripto para la regulación del Banco Central de Brasil (Resoluciones BCB 519, 520 y 521). 18 años desarrollando sistemas y plataformas — de la arquitectura al deploy.",
+    "keywords": [
+      "desarrollo de software",
+      "software a medida",
+      "sistemas personalizados",
+      "consultoría cripto",
+      "regulación cripto Brasil",
+      "Banco Central de Brasil cripto",
+      "marco legal de criptoactivos Brasil",
+      "Ley 14.478/2022",
+      "SPSAV",
+      "Resolución BCB 519",
+      "Resolución BCB 520",
+      "Resolución BCB 521",
+      "cómo crear un exchange cripto",
+      "exchange de criptomonedas desde cero",
+      "proveedor de servicios de activos virtuales",
+      "inteligencia artificial",
+      "agentes autónomos",
+      "automatización con IA",
+      "landing pages",
+      "sitios institucionales",
+      "aplicaciones web",
+      "Trably"
+    ],
+    "ogAlt": "Trably Software — software a medida, IA y consultoría cripto",
+    "ogEyebrow": "SOFTWARE · IA · CONSULTORÍA CRIPTO",
+    "serviceType": [
+      "Desarrollo de software a medida",
+      "Inteligencia artificial y agentes autónomos",
+      "Consultoría en regulación de criptoactivos"
+    ],
+    "knowsAbout": [
+      "Desarrollo de software",
+      "Inteligencia artificial",
+      "Agentes autónomos",
+      "Regulación de criptoactivos",
+      "Ley brasileña 14.478/2022",
+      "Resoluciones BCB 519, 520 y 521",
+      "Proveedores de servicios de activos virtuales (SPSAV)",
+      "Exchanges de criptoactivos"
+    ],
+    "catalog": "Servicios de desarrollo"
+  },
+  "common": {
+    "skip": "Saltar al contenido",
+    "whatsappMsg": "¡Hola! Llegué a través del sitio de Trably.",
+    "whatsapp": "WhatsApp",
+    "quote": "Cotización",
+    "requestQuote": "Solicitar cotización",
+    "talkTeam": "Hablar con el equipo",
+    "openMenu": "Abrir menú",
+    "menu": "Menú",
+    "theme": "Cambiar tema claro y oscuro",
+    "language": "Idioma",
+    "home": "Trably Software — inicio",
+    "navMain": "Principal",
+    "navFooter": "Pie de página"
+  },
+  "nav": {
+    "services": "Servicios",
+    "crypto": "Consultoría cripto",
+    "process": "Proceso",
+    "projects": "Proyectos",
+    "clients": "Clientes"
+  },
+  "hero": {
+    "eyebrow": "Software · IA · Consultoría cripto",
+    "h1a": "Las ideas se vuelven",
+    "h1b": "productos que escalan",
+    "lead": "Desde hace 18 años diseñamos y desarrollamos sistemas, plataformas y agentes de IA a medida — de la arquitectura al deploy — y asesoramos a empresas para operar cripto dentro de la regulación del Banco Central de Brasil.",
+    "guarantee": "Cotización gratuita y sin compromiso",
+    "stats": [
+      {
+        "value": "18",
+        "unit": "años",
+        "label": "de ingeniería de software"
+      },
+      {
+        "value": "+30",
+        "unit": "",
+        "label": "proyectos en producción"
+      },
+      {
+        "value": "100%",
+        "unit": "",
+        "label": "a medida"
+      }
+    ]
+  },
+  "showcase": {
+    "label": "Ejemplos de aplicaciones que desarrollamos",
+    "show": "Mostrar: {name}",
+    "pause": "Pausar",
+    "play": "Reanudar",
+    "tabs": {
+      "agent": "Agente de IA",
+      "swap": "Swap cripto",
+      "wallet": "Wallet Web3",
+      "whatsapp": "Chatbot WhatsApp",
+      "quote": "Cotizaciones",
+      "barber": "Turnos",
+      "lms": "LMS / Cursos"
+    },
+    "swap": {
+      "title": "Intercambiar",
+      "settings": "Slippage 0,5%",
+      "from": "Pagas",
+      "to": "Recibes",
+      "balance": "Saldo",
+      "rate": "1 ETH = 3.450 USDC",
+      "fee": "Tarifa de red",
+      "feeValue": "≈ US$ 1,84",
+      "route": "Mejor ruta",
+      "button": "Intercambiar"
+    },
+    "wallet": {
+      "account": "Cuenta 1",
+      "network": "Ethereum",
+      "buy": "Comprar",
+      "swap": "Intercambiar",
+      "send": "Enviar",
+      "bridge": "Puente",
+      "tokens": "Tokens",
+      "nfts": "NFTs",
+      "activity": "Actividad",
+      "change": "+2,4% hoy"
+    },
+    "whatsapp": {
+      "name": "Trably Bot",
+      "status": "en línea",
+      "m1": "¡Hola! Quiero una cotización para una app de delivery",
+      "m2": "¡Hola! Claro. ¿Para cuándo necesitas la app?",
+      "m3": "En unos 2 meses",
+      "m4": "¡Perfecto! Preparé una propuesta inicial y un especialista te contactará enseguida.",
+      "quick": [
+        "Ver propuesta",
+        "Hablar con una persona"
+      ],
+      "input": "Mensaje"
+    },
+    "quote": {
+      "title": "Cotización",
+      "number": "#1042",
+      "client": "Minera Serra Azul",
+      "status": "Aprobada",
+      "item": "Ítem",
+      "qty": "Cant.",
+      "price": "Valor",
+      "items": [
+        "Broca diamantada HQ",
+        "Corona de perforación",
+        "Barra NQ 3 m"
+      ],
+      "total": "Total",
+      "button": "Generar pedido"
+    },
+    "barber": {
+      "title": "Navaja & Co.",
+      "service": "Corte + barba · 45 min",
+      "days": [
+        "Lun",
+        "Mar",
+        "Mié",
+        "Jue",
+        "Vie"
+      ],
+      "month": "Diciembre",
+      "slots": "Horarios libres",
+      "confirm": "Confirmar a las 14:30",
+      "reminder": "Recordatorio por WhatsApp 1 h antes"
+    },
+    "lms": {
+      "course": "Gestión Financiera para Pymes",
+      "module": "Módulo 3 · Flujo de caja",
+      "lesson": "Clase 12",
+      "progress": "68% completado",
+      "live": "Entrando ahora",
+      "joined": "entró al curso",
+      "watching": "está viendo la clase 12",
+      "certificate": "recibió el certificado"
+    },
+    "agent": {
+      "title": "Agente comercial",
+      "online": "En línea",
+      "steps": [
+        "Lead recibido por WhatsApp",
+        "El agente lo califica y consulta el CRM",
+        "Propuesta generada y enviada",
+        "Seguimiento agendado"
+      ],
+      "command": "propuesta.enviar(cliente)"
+    }
+  },
+  "problem": {
+    "eyebrow": "El problema",
+    "a": "La tecnología equivocada",
+    "b": "sale cara",
+    "lead": "La mayoría de las empresas no sufre por falta de software — sufre por el software equivocado. Estos son los síntomas que más encontramos:",
+    "symptoms": "Síntomas",
+    "pains": [
+      {
+        "title": "Planillas y sistemas que no se comunican",
+        "text": "Datos copiados a mano entre herramientas, retrabajo y decisiones tomadas a ciegas."
+      },
+      {
+        "title": "Proyectos que nunca terminan",
+        "text": "Plazos que se atrasan, alcance indefinido y proveedores que desaparecen después de la entrega."
+      },
+      {
+        "title": "Software que no soporta el crecimiento",
+        "text": "Plantillas rígidas que se vuelven lentas, se caen en los picos y frenan la siguiente etapa del negocio."
+      },
+      {
+        "title": "Un equipo atrapado en tareas repetitivas",
+        "text": "Atención, registro y seguimiento manuales que podrían hacer agentes de IA."
+      }
+    ],
+    "fixEyebrow": "Cómo lo resolvemos",
+    "fixA": "Ingeniería a medida,",
+    "fixB": "bien hecha",
+    "fixes": [
+      "Arquitectura pensada para escalar desde el primer deploy",
+      "Alcance, cronograma y entregas predecibles en cada sprint",
+      "Sistemas, APIs y datos integrados en un solo lugar",
+      "Agentes de IA que automatizan la operación 24/7",
+      "Soporte y evolución continua después del lanzamiento"
+    ]
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "a": "Tecnología que resuelve",
+    "b": "problemas reales",
+    "lead": "Del concepto a la operación, entregamos soluciones completas — y las cuidamos después del lanzamiento.",
+    "items": [
+      {
+        "title": "Inteligencia Artificial",
+        "description": "IA y agentes autónomos que automatizan tareas repetitivas, conversan con tus clientes y toman decisiones — liberando a tu equipo para lo que importa.",
+        "tags": [
+          "Agentes",
+          "LLMs",
+          "Automatización"
+        ]
+      },
+      {
+        "title": "Consultoría Cripto",
+        "description": "Adecuación a las Resoluciones BCB 519, 520 y 521 e implementación de exchanges, custodios e intermediarios de activos virtuales.",
+        "tags": [
+          "SPSAV",
+          "Banco Central",
+          "Compliance"
+        ]
+      },
+      {
+        "title": "Sistemas Completos",
+        "description": "Plataformas a medida con paneles, dashboards e integraciones que organizan la operación y dan visibilidad total del negocio.",
+        "tags": [
+          "Dashboard",
+          "API REST",
+          "Reportes"
+        ]
+      },
+      {
+        "title": "dApps & BaaS",
+        "description": "Aplicaciones descentralizadas e infraestructura bancaria digital con la seguridad y el compliance que exige el mercado financiero.",
+        "tags": [
+          "Blockchain",
+          "Smart Contracts",
+          "KYC"
+        ]
+      },
+      {
+        "title": "Landing Pages",
+        "description": "Páginas de alta conversión con diseño moderno, SEO y máximo rendimiento para convertir visitantes en clientes.",
+        "tags": [
+          "Conversión",
+          "SEO",
+          "Core Web Vitals"
+        ]
+      },
+      {
+        "title": "Sitios Institucionales",
+        "description": "Una presencia digital profesional que transmite credibilidad y fortalece tu marca donde tus clientes buscan.",
+        "tags": [
+          "Branding",
+          "CMS",
+          "Multilenguaje"
+        ]
+      },
+      {
+        "title": "Agenda en Línea",
+        "description": "Gestión de turnos para clínicas, barberías y prestadores de servicios — menos ausencias, más clientes y la agenda siempre llena.",
+        "tags": [
+          "Calendario",
+          "Notificaciones",
+          "Pagos"
+        ]
+      },
+      {
+        "title": "Plataformas de Video",
+        "description": "Streaming bajo demanda con gestión de contenido, suscripciones y analytics para monetizar tu audiencia.",
+        "tags": [
+          "Streaming",
+          "Suscripciones",
+          "CDN"
+        ]
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Consultoría cripto · Banco Central de Brasil",
+    "a": "Tu operación cripto dentro de la",
+    "b": "regulación del BCB",
+    "lead": "Las Resoluciones BCB 519, 520 y 521, que reglamentan el marco legal de los criptoactivos en Brasil (Ley 14.478/2022), están vigentes desde el 2 de febrero de 2026. Quien intermedia, custodia o hace cambio con activos virtuales necesita autorización del Banco Central como SPSAV (proveedor de servicios de activos virtuales). Te asesoramos para llegar allí — de la lectura de las normas al sistema funcionando.",
+    "cta": "Hablar sobre consultoría",
+    "ctaNote": "Atención directa por WhatsApp +55 (84) 98778-2431",
+    "whatsappMsg": "¡Hola! Quiero hablar sobre consultoría cripto y la regulación del Banco Central de Brasil.",
+    "resolution": "Resolución BCB",
+    "resolutions": [
+      {
+        "n": "519",
+        "title": "Autorización",
+        "text": "Proceso de autorización del Banco Central para quienes prestan servicios de activos virtuales: requisitos, documentación y etapas de la solicitud."
+      },
+      {
+        "n": "520",
+        "title": "Constitución y funcionamiento",
+        "text": "Reglas para las SPSAV: gobernanza, capital, segregación patrimonial, custodia, PLD/FT, ciberseguridad y protección al cliente."
+      },
+      {
+        "n": "521",
+        "title": "Cambio y capitales",
+        "text": "Operaciones con activos virtuales tratadas como cambio y capitales internacionales — stablecoins, transferencias y pagos con el exterior."
+      }
+    ],
+    "knowEyebrow": "Know-how en regulación cripto",
+    "knowTitle": "Sabemos trabajar con la regulación — en la norma y en el código",
+    "knowText": "Seguimos el marco legal de los criptoactivos en Brasil desde la Ley 14.478/2022 hasta las resoluciones del Banco Central de 2026, y ya construimos en la práctica lo que exigen: dApps, marketplaces de NFT, infraestructura bancaria (BaaS) con KYC, custodia y trazas de auditoría. Hablas con quien entiende la exigencia regulatoria y sabe convertirla en sistemas, procesos y políticas.",
+    "roadmapTitle": "Cómo crear un exchange cripto desde cero",
+    "roadmapBadge": "6 etapas",
+    "step": "Etapa",
+    "roadmap": [
+      {
+        "title": "Modelo y encuadre",
+        "text": "Definimos qué hará la operación — intermediación, custodia o exchange — y en qué modalidad de SPSAV encaja."
+      },
+      {
+        "title": "Estructura societaria",
+        "text": "Constitución de la empresa, capital, gobernanza y directores responsables exigidos por la Resolución BCB 520."
+      },
+      {
+        "title": "Autorización en el BCB",
+        "text": "Plan de negocios, políticas internas y expediente de la solicitud de autorización según la Resolución BCB 519."
+      },
+      {
+        "title": "Compliance y PLD/FT",
+        "text": "KYC/KYB, monitoreo de transacciones, travel rule, prevención de lavado de dinero y reportes regulatorios."
+      },
+      {
+        "title": "Tecnología del exchange",
+        "text": "Order book o liquidez integrada, wallets con custodia segregada (hot/cold, MPC), Pix, APIs y back office."
+      },
+      {
+        "title": "Operación segura",
+        "text": "Ciberseguridad, gestión de riesgos, auditoría, plan de continuidad y evolución continua después del go-live."
+      }
+    ],
+    "disclaimer": "Consultoría técnica y regulatoria. No sustituye la asesoría jurídica para la presentación formal ante el Banco Central."
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "a": "Del diagnóstico",
+    "b": "al deploy",
+    "lead": "Un proceso simple y transparente: sabes qué se está haciendo, cuándo estará listo y cuánto cuesta.",
+    "step": "Paso",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "text": "Entendemos el negocio, el problema y las restricciones (incluidas las regulatorias). Salimos con alcance y cronograma claros."
+      },
+      {
+        "title": "Arquitectura y build",
+        "text": "Diseño de la solución y desarrollo en sprints cortos, con entregas que ves funcionando cada semana."
+      },
+      {
+        "title": "Deploy",
+        "text": "Pruebas, seguridad y rendimiento antes de salir al aire. Un lanzamiento sin sustos, con monitoreo desde el primer día."
+      },
+      {
+        "title": "Evolución",
+        "text": "Soporte continuo, correcciones y nuevas funcionalidades a medida que tu negocio crece."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Portafolio",
+    "a": "Proyectos que ya",
+    "b": "están en línea",
+    "lead": "Soluciones reales que desarrollamos y mantenemos en producción, generando valor para nuestros clientes todos los días.",
+    "items": [
+      {
+        "title": "Sistema de Turnos",
+        "category": "Clínicas y Barberías",
+        "description": "Gestión de turnos con panel administrativo y notificaciones automáticas que reducen ausencias y mantienen la agenda llena."
+      },
+      {
+        "title": "Plataforma Educativa",
+        "category": "Educación",
+        "description": "Entorno virtual de aprendizaje con videoclases, cuestionarios y certificados — escalando la enseñanza sin perder calidad."
+      },
+      {
+        "title": "Plataforma de Streaming",
+        "category": "Entretenimiento",
+        "description": "Video bajo demanda con suscripciones y gestión de contenido, listo para monetizar una audiencia creciente."
+      },
+      {
+        "title": "Bank as a Service",
+        "category": "Fintech",
+        "description": "Infraestructura bancaria digital con APIs de pago, KYC y compliance — seguridad de nivel financiero."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Clientes",
+    "a": "La confianza de quienes",
+    "b": "crecieron con nosotros",
+    "rating": "5 de 5 estrellas",
+    "items": [
+      {
+        "name": "José Ronilson Dantas",
+        "business": "JAMA Exploration",
+        "initials": "JR",
+        "role": "Director Comercial y Financiero",
+        "text": "Trably desarrolló toda la plataforma de JAMA Exploration: el sitio institucional en tres idiomas, el portal del cliente, el portal del proveedor y nuestro panel interno. Hoy cotizaciones, pedidos y catálogo están en un solo lugar, y nuestros clientes siguen todo en línea. El equipo entendió la operación minera y entregó un sistema a medida, con nuestra identidad."
+      },
+      {
+        "name": "Pedro",
+        "business": "Barbearia Real",
+        "initials": "PR",
+        "role": "Propietario",
+        "text": "Trably transformó por completo la gestión de mi barbería. Antes perdía clientes por falta de organización en los turnos. Hoy, con el sistema personalizado que desarrollaron, mis clientes reservan en línea con facilidad y reciben notificaciones automáticas. Reduje las ausencias en un 70% y mi agenda está siempre llena. Fue la mejor inversión que hice en mi negocio."
+      },
+      {
+        "name": "Rômulo",
+        "business": "Frio Eletromáquinas",
+        "initials": "RF",
+        "role": "Director Comercial",
+        "text": "Necesitábamos una presencia digital profesional para captar clientes con tráfico pago. Trably creó una landing page que realmente convierte. En menos de dos meses triplicamos los contactos calificados y nuestro costo por lead cayó a la mitad. El equipo entendió exactamente lo que necesitábamos y superó nuestras expectativas."
+      },
+      {
+        "name": "João",
+        "business": "NFT Marketplace",
+        "initials": "JO",
+        "role": "Fundador de la Comunidad",
+        "text": "Crear un marketplace de NFTs desde cero parecía imposible hasta conocer a Trably. Desarrollaron toda la plataforma de minting y negociación de NFTs para mi comunidad. El sistema es rápido, seguro e intuitivo. Lanzamos nuestra colección inicial con éxito y hoy tenemos una comunidad activa negociando dentro de la plataforma. ¡Muy recomendado!"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Dudas",
+    "a": "Preguntas",
+    "b": "frecuentes",
+    "lead": "¿No encontraste lo que buscabas? Escríbenos por WhatsApp.",
+    "items": [
+      {
+        "question": "¿Cuánto tiempo lleva desarrollar un proyecto?",
+        "answer": "Depende del alcance. Una landing page suele estar lista en 1 a 2 semanas, mientras que los sistemas completos llevan de 1 a 3 meses. Después de entender tus necesidades, presentamos un cronograma claro con entregas predecibles."
+      },
+      {
+        "question": "¿Desarrollan soluciones totalmente a medida?",
+        "answer": "Sí. Diseñamos cada solución a partir de las necesidades de tu negocio — de la arquitectura al deploy — sin depender de plantillas rígidas, garantizando escalabilidad y mantenimiento a largo plazo."
+      },
+      {
+        "question": "¿Ofrecen consultoría sobre la regulación cripto del Banco Central de Brasil?",
+        "answer": "Sí. Asesoramos a exchanges, custodios, intermediarios y empresas que quieren operar con criptoactivos en Brasil: lectura del marco legal (Ley 14.478/2022) y de las Resoluciones BCB 519, 520 y 521 — vigentes desde el 2 de febrero de 2026 — para proveedores de servicios de activos virtuales (SPSAV), diagnóstico de cumplimiento, plan de adecuación y la tecnología necesaria (KYC, prevención de lavado de dinero, segregación patrimonial y reportes)."
+      },
+      {
+        "question": "¿Cómo crear un exchange cripto desde cero?",
+        "answer": "En seis etapas: definir el modelo de negocio y su encuadre (intermediario, custodio o exchange); armar la estructura societaria, el capital y la gobernanza exigidos; solicitar la autorización del Banco Central como SPSAV (Resoluciones BCB 519 y 520); implementar compliance y PLD/FT (KYC/KYB, monitoreo y reportes); construir la tecnología (order book o liquidez integrada, wallets con custodia segregada, Pix y APIs); y operar con ciberseguridad, gestión de riesgos y auditoría. Acompañamos todas las etapas, de la regulación al código."
+      },
+      {
+        "question": "¿Hay soporte después del lanzamiento?",
+        "answer": "Sí. Ofrecemos soporte continuo después del lanzamiento, con monitoreo, correcciones y evolución del producto a medida que tu negocio crece."
+      },
+      {
+        "question": "¿Cómo funciona la cotización?",
+        "answer": "Es gratuita y sin compromiso. Describe tu proyecto en el formulario de contacto o por WhatsApp +55 (84) 98778-2431 y te respondemos con una propuesta detallada, alcance y plazos."
+      },
+      {
+        "question": "¿Qué tecnologías utilizan?",
+        "answer": "Trabajamos con stacks modernos y consolidados para web y back-end, eligiendo la tecnología más adecuada para cada proyecto en términos de rendimiento, seguridad y escalabilidad."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Hablemos",
+    "a": "¿Listo para hacer realidad",
+    "b": "tu proyecto?",
+    "lead": "Cuéntanos tu idea y diseñamos la solución ideal para tu negocio. De la estrategia al deploy, con 18 años de experiencia cuidando cada detalle.",
+    "highlights": [
+      "Desarrollo ágil, con entregas predecibles",
+      "Soporte continuo y evolución después del lanzamiento",
+      "Comunicación transparente en cada etapa"
+    ],
+    "next": "Próximos pasos",
+    "free": "Cotización gratis",
+    "steps": [
+      {
+        "title": "Nos cuentas la idea",
+        "text": "Por el formulario o por WhatsApp, como esté — sin necesidad de un documento listo."
+      },
+      {
+        "title": "Entendemos el alcance",
+        "text": "Una conversación para entender el negocio, el problema y las restricciones, incluidas las regulatorias."
+      },
+      {
+        "title": "Recibes la propuesta",
+        "text": "Alcance, cronograma e inversión detallados. Gratis y sin compromiso."
+      }
+    ],
+    "direct": "Contacto directo"
+  },
+  "footer": {
+    "about": "Ingeniería de software a medida, agentes de IA y consultoría cripto. Diseñamos, construimos y mantenemos sistemas que ayudan a los negocios a crecer.",
+    "nav": "Navegación",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "eyebrow": "Cotización gratuita",
+    "title": "Habla con el equipo",
+    "description": "Completa tus datos y seguimos la conversación por WhatsApp.",
+    "name": "Nombre",
+    "namePh": "Tu nombre completo",
+    "email": "Correo electrónico",
+    "emailPh": "tu@correo.com",
+    "phone": "Teléfono",
+    "phonePh": "+52 5512345678",
+    "terms": "Acepto los términos de servicio y la política de privacidad",
+    "submit": "Enviar",
+    "message": "¡Hola! Llegué a través del sitio de Trably y quiero una cotización.\n\nNombre: {name}\nCorreo: {email}\nTeléfono: {phone}",
+    "errors": {
+      "nameRequired": "El nombre es obligatorio",
+      "max100": "Máximo de 100 caracteres",
+      "emailInvalid": "Correo inválido",
+      "max255": "Máximo de 255 caracteres",
+      "phoneRequired": "El teléfono es obligatorio",
+      "phoneFormat": "Formato inválido. Ej.: +52 5512345678",
+      "terms": "Debes aceptar los términos"
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe o fue movida.",
+    "back": "Volver al inicio"
+  }
+}

@@ -1,10 +1,12 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
 const ThemeToggle = () => {
+  const t = useTranslations("common");
   const { setTheme, resolvedTheme } = useTheme();
 
   return (
@@ -12,7 +14,7 @@ const ThemeToggle = () => {
       type="button"
       variant="outline"
       size="icon"
-      aria-label="Alternar tema claro e escuro"
+      aria-label={t("theme")}
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       className="size-11 rounded-full border-line-strong bg-card text-ink-body hover:bg-surface hover:text-accent [&_svg]:size-[18px]"
     >

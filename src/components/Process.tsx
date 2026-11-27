@@ -1,31 +1,16 @@
 import { Code2, Compass, LifeBuoy, Rocket } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { reveal } from "@/components/motion/reveal";
 import { Container, SectionHead } from "@/components/site/ui";
 
-const steps = [
-  {
-    icon: Compass,
-    title: "Diagnóstico",
-    text: "Entendemos o negócio, o problema e as restrições (inclusive regulatórias). Saímos com escopo e cronograma claros.",
-  },
-  {
-    icon: Code2,
-    title: "Arquitetura e build",
-    text: "Desenho da solução e desenvolvimento em sprints curtos, com entregas que você vê funcionando a cada semana.",
-  },
-  {
-    icon: Rocket,
-    title: "Deploy",
-    text: "Testes, segurança e performance antes de ir ao ar. Lançamento sem sustos, com monitoramento desde o dia 1.",
-  },
-  {
-    icon: LifeBuoy,
-    title: "Evolução",
-    text: "Suporte contínuo, correções e novas funcionalidades conforme o seu negócio cresce.",
-  },
-];
+const icons = [Compass, Code2, Rocket, LifeBuoy];
 
-const Process = () => (
+type Step = { title: string; text: string };
+
+const Process = () => {
+  const t = useTranslations("process");
+  const steps = (t.raw("steps") as Step[]).map((st, i) => ({ ...st, icon: icons[i] }));
+  return (
   <section
     id="processo"
     aria-labelledby="processo-heading"
@@ -34,10 +19,10 @@ const Process = () => (
     <Container className="flex flex-col gap-14">
       <SectionHead
         id="processo-heading"
-        eyebrow="Como trabalhamos"
-        a="Do diagnóstico"
-        b="ao deploy"
-        lead="Um processo simples e transparente: você sabe o que está sendo feito, quando fica pronto e quanto custa."
+        eyebrow={t("eyebrow")}
+        a={t("a")}
+        b={t("b")}
+        lead={t("lead")}
       />
       <ol className="relative m-0 grid list-none grid-cols-4 gap-6 p-0 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
         <div
@@ -51,7 +36,7 @@ const Process = () => (
               <s.icon aria-hidden="true" className="size-6" />
             </span>
             <span className="font-display text-sm font-bold uppercase tracking-[3px] text-eyebrow">
-              Passo {String(i + 1).padStart(2, "0")}
+              {t("step")} {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="m-0 font-display text-[26px] font-bold uppercase leading-none tracking-[1px] text-ink">
               {s.title}
@@ -62,6 +47,7 @@ const Process = () => (
       </ol>
     </Container>
   </section>
-);
+  );
+};
 
 export default Process;

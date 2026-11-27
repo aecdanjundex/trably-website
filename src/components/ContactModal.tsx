@@ -1,55 +1,50 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useMemo } from "react";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { whatsappLink } from "@/lib/site";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Máximo de 100 caracteres"),
-  email: z.string().trim().email("Email inválido").max(255, "Máximo de 255 caracteres"),
-  phone: z
-    .string()
-    .trim()
-    .min(1, "Telefone é obrigatório")
-    .regex(/^\+\d{1,3}\s?\d{4,14}$/, "Formato inválido. Ex: +55 11999999999"),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: "Você deve aceitar os termos" }),
-  }),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
 
 interface ContactModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-/** Sem back-end de leads por enquanto: abre o WhatsApp com os dados já preenchidos. */
-async function handleSubmitContact(data: ContactFormValues) {
-  const text = `Olá! Vim pelo site da Trably e quero um orçamento.\n\nNome: ${data.name}\nE-mail: ${data.email}\nTelefone: ${data.phone}`;
-  window.open(whatsappLink(text), "_blank", "noopener");
-}
-
 const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "+55 ",
-      terms: false as unknown as true,
-    },
+  const t = useTranslations("contact");
+
+  const schema = useMemo(
+    () =>
+      z.object({
+        name: z.string().trim().min(1, t("errors.nameRequired")).max(100, t("errors.max100")),
+        email: z.string().trim().email(t("errors.emailInvalid")).max(255, t("errors.max255")),
+        phone: z
+          .string()
+          .trim()
+          .min(1, t("errors.phoneRequired"))
+          .regex(/^\+\d{1,3}\s?\d{4,14}$/, t("errors.phoneFormat")),
+        terms: z.literal(true, { errorMap: () => ({ message: t("errors.terms") }) }),
+      }),
+    [t],
+  );
+  type Values = z.infer<typeof schema>;
+
+  const form = useForm<Values>({
+    resolver: zodResolver(schema),
+    defaultValues: { name: "", email: "", phone: "+", terms: false as unknown as true },
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
-    await handleSubmitContact(data);
+  /** Sem back-end de leads por enquanto: abre o WhatsApp com os dados já preenchidos. */
+  const onSubmit = (data: Values) => {
+    window.open(whatsappLink(t("message", { name: data.name, email: data.email, phone: data.phone })), "_blank", "noopener");
     form.reset();
     onOpenChange(false);
   };
@@ -58,58 +53,36 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="rounded-[10px] border-line bg-card sm:max-w-md">
         <DialogHeader>
-          <p className="ds-eyebrow text-sm">Orçamento gratuito</p>
+          <p className="ds-eyebrow text-sm">{t("eyebrow")}</p>
           <DialogTitle className="font-display text-[32px] font-bold uppercase leading-none text-ink">
-            Fale com a equipe
+            {t("title")}
           </DialogTitle>
-          <DialogDescription className="text-ink-muted">
-            Preencha seus dados e continuamos a conversa pelo WhatsApp.
-          </DialogDescription>
+          <DialogDescription className="text-ink-muted">{t("description")}</DialogDescription>
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-2">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="ds-label">Nome</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Seu nome completo" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="ds-label">Email</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="seu@email.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="ds-label">Telefone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="+55 11999999999" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <form onSubmit={form.handleSubmit(onSubmit)} className="mt-2 space-y-4">
+            {(["name", "email", "phone"] as const).map((key) => (
+              <FormField
+                key={key}
+                control={form.control}
+                name={key}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="ds-label">{t(key)}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type={key === "email" ? "email" : key === "phone" ? "tel" : "text"}
+                        autoComplete={key === "name" ? "name" : key === "email" ? "email" : "tel"}
+                        placeholder={t(`${key}Ph`)}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            ))}
 
             <FormField
               control={form.control}
@@ -120,9 +93,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
                     <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
                   <div className="space-y-1 leading-none">
-                    <FormLabel className="text-sm font-normal text-muted-foreground">
-                      Concordo com os termos de serviço e política de privacidade
-                    </FormLabel>
+                    <FormLabel className="text-sm font-normal text-muted-foreground">{t("terms")}</FormLabel>
                     <FormMessage />
                   </div>
                 </FormItem>
@@ -130,7 +101,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
             />
 
             <Button type="submit" variant="brand" size="xl" className="w-full">
-              Enviar
+              {t("submit")}
               <ArrowRight aria-hidden="true" className="tr-arrow" />
             </Button>
           </form>

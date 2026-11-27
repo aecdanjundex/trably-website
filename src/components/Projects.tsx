@@ -1,36 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { reveal } from "@/components/motion/reveal";
 import { Container, SectionHead } from "@/components/site/ui";
 import { Card } from "@/components/ui/card";
 
-const projects = [
-  {
-    title: "Sistema de Agendamento",
-    category: "Clínicas & Barbearias",
-    description:
-      "Gestão de agendamentos com painel administrativo e notificações automáticas que reduzem faltas e mantêm a agenda cheia.",
-  },
-  {
-    title: "Ambiente AVA",
-    category: "Educação",
-    description:
-      "Ambiente virtual de aprendizagem com videoaulas, quizzes e certificados — escalando o ensino sem perder qualidade.",
-  },
-  {
-    title: "Plataforma de Streaming",
-    category: "Entretenimento",
-    description:
-      "Vídeos sob demanda com assinaturas e gestão de conteúdo, pronto para monetizar uma audiência crescente.",
-  },
-  {
-    title: "Bank as a Service",
-    category: "Fintech",
-    description:
-      "Infraestrutura bancária digital com APIs de pagamento, KYC e compliance — segurança de nível financeiro.",
-  },
-];
+type Project = { title: string; category: string; description: string };
 
-const Projects = () => (
+const Projects = () => {
+  const t = useTranslations("projects");
+  const projects = t.raw("items") as Project[];
+  return (
   <section
     id="projetos"
     aria-labelledby="projetos-heading"
@@ -39,10 +18,10 @@ const Projects = () => (
     <Container className="flex flex-col gap-12">
       <SectionHead
         id="projetos-heading"
-        eyebrow="Portfólio"
-        a="Projetos que já"
-        b="estão no ar"
-        lead="Soluções reais que desenvolvemos e mantemos em produção, gerando valor para nossos clientes todos os dias."
+        eyebrow={t("eyebrow")}
+        a={t("a")}
+        b={t("b")}
+        lead={t("lead")}
       />
       <ul className="m-0 grid list-none grid-cols-2 gap-5 p-0 max-[760px]:grid-cols-1">
         {projects.map((p, i) => (
@@ -67,6 +46,7 @@ const Projects = () => (
       </ul>
     </Container>
   </section>
-);
+  );
+};
 
 export default Projects;

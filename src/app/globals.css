@@ -235,6 +235,35 @@
     transform: scale(1.7);
   }
 }
+@keyframes tr-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes tr-pop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.97);
+  }
+}
+@keyframes tr-flip {
+  0%,
+  70% {
+    transform: rotate(0);
+  }
+  85%,
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes tr-grow {
+  from {
+    width: 0;
+  }
+}
 @keyframes tr-caret {
   50% {
     opacity: 0;
@@ -297,6 +326,20 @@
   }
   .tr-caret {
     animation: tr-caret 1s steps(1) infinite;
+  }
+  /* vitrine do hero */
+  .tr-progress {
+    transform-origin: left center;
+    animation: tr-progress linear both;
+  }
+  .tr-pop-in {
+    animation: tr-pop 450ms var(--rv-ease) both;
+  }
+  .tr-swap-flip {
+    animation: tr-flip 2.6s var(--rv-ease) infinite alternate;
+  }
+  .tr-grow {
+    animation: tr-grow 1200ms var(--rv-ease) 200ms both;
   }
 
   .tr-pulse {

@@ -1,41 +1,16 @@
 import { Quote, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { reveal } from "@/components/motion/reveal";
 import { Container, SectionHead } from "@/components/site/ui";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 
-const testimonials = [
-  {
-    name: "José Ronilson Dantas",
-    business: "JAMA Exploration",
-    initials: "JR",
-    role: "Diretor Comercial e Financeiro",
-    text: "A Trably desenvolveu toda a plataforma da JAMA Exploration: o site institucional em três idiomas, o portal do cliente, o portal do fornecedor e o nosso painel interno. Hoje cotações, pedidos e catálogo ficam num só lugar, e nossos clientes acompanham tudo online. A equipe entendeu a operação de mineração e entregou um sistema sob medida, com a nossa cara.",
-  },
-  {
-    name: "Pedro",
-    business: "Barbearia Real",
-    initials: "PR",
-    role: "Proprietário",
-    text: "A Trably transformou completamente a gestão da minha barbearia. Antes eu perdia clientes por falta de organização nos agendamentos. Hoje, com o sistema personalizado que desenvolveram, meus clientes agendam online com facilidade e recebem notificações automáticas. Reduzi as faltas em 70% e minha agenda está sempre cheia. Foi o melhor investimento que fiz pro meu negócio.",
-  },
-  {
-    name: "Rômulo",
-    business: "Frio Eletromáquinas",
-    initials: "RF",
-    role: "Diretor Comercial",
-    text: "Precisávamos de uma presença digital profissional para captar clientes através de tráfego pago. A Trably criou uma landing page que converte de verdade. Em menos de dois meses, triplicamos o número de contatos qualificados e nosso custo por lead caiu pela metade. A equipe entendeu exatamente o que precisávamos e entregou além das expectativas.",
-  },
-  {
-    name: "João",
-    business: "NFT Marketplace",
-    initials: "JO",
-    role: "Fundador da Comunidade",
-    text: "Criar um marketplace de NFTs do zero parecia impossível até conhecer a Trably. Eles desenvolveram toda a plataforma de minting e negociação de NFTs para minha comunidade. O sistema é rápido, seguro e intuitivo. Conseguimos lançar nossa coleção inicial com sucesso e hoje temos uma comunidade ativa negociando dentro da plataforma. Recomendo demais!",
-  },
-];
+type Testimonial = { name: string; business: string; initials: string; role: string; text: string };
 
-const Testimonials = () => (
+const Testimonials = () => {
+  const tr = useTranslations("testimonials");
+  const testimonials = tr.raw("items") as Testimonial[];
+  return (
   <section
     id="depoimentos"
     aria-labelledby="depoimentos-heading"
@@ -44,9 +19,9 @@ const Testimonials = () => (
     <Container className="flex flex-col gap-12">
       <SectionHead
         id="depoimentos-heading"
-        eyebrow="Clientes"
-        a="A confiança de quem"
-        b="cresceu com a gente"
+        eyebrow={tr("eyebrow")}
+        a={tr("a")}
+        b={tr("b")}
       />
       <ul className="m-0 grid list-none grid-cols-2 gap-5 p-0 max-[900px]:grid-cols-1">
         {testimonials.map((t, i) => (
@@ -54,7 +29,7 @@ const Testimonials = () => (
             <Card className="tr-card flex h-full flex-col gap-5 rounded-[10px] border-line bg-card p-7 shadow-none">
               <div className="flex items-center justify-between">
                 <Quote aria-hidden="true" className="tr-card-icon size-8 text-glow" />
-                <span className="flex gap-1" role="img" aria-label="5 de 5 estrelas">
+                <span className="flex gap-1" role="img" aria-label={tr("rating")}>
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} aria-hidden="true" className="size-4 fill-accent text-accent" />
                   ))}
@@ -84,6 +59,7 @@ const Testimonials = () => (
       </ul>
     </Container>
   </section>
-);
+  );
+};
 
 export default Testimonials;

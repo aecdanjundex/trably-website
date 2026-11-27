@@ -1,10 +1,21 @@
-import { faq, siteConfig } from "@/lib/site";
+import { getTranslations } from "next-intl/server";
+import { localeInfo, type Locale } from "@/i18n/routing";
+import { siteConfig } from "@/lib/site";
+
+type Item = { title: string; description: string };
+type Faq = { question: string; answer: string };
 
 /**
- * Schema.org JSON-LD. Improves rich results in search engines and gives
- * LLMs/agents a machine-readable description of the business and its offerings.
+ * Schema.org JSON-LD no idioma da página: melhora os rich results e dá a LLMs/agentes uma
+ * descrição legível por máquina do negócio e dos serviços.
  */
-export function StructuredData() {
+export async function StructuredData({ locale }: { locale: Locale }) {
+  const t = await getTranslations({ locale });
+  const url = `${siteConfig.url}/${locale}`;
+  const lang = localeInfo[locale].htmlLang;
+  const services = t.raw("services.items") as Item[];
+  const faq = t.raw("faq.items") as Faq[];
+
   const graph = [
     {
       "@type": "Organization",
@@ -12,95 +23,72 @@ export function StructuredData() {
       name: siteConfig.name,
       alternateName: siteConfig.shortName,
       url: siteConfig.url,
-      description: siteConfig.description,
+      logo: `${siteConfig.url}/icon-512.png`,
+      description: t("meta.description"),
       email: siteConfig.email,
       telephone: siteConfig.telephone,
-      logo: `${siteConfig.url}/icon-512.png`,
       contactPoint: [
         {
           "@type": "ContactPoint",
           telephone: siteConfig.telephone,
+          email: siteConfig.email,
           contactType: "sales",
           areaServed: "BR",
-          availableLanguage: ["Portuguese"],
+          availableLanguage: ["Portuguese", "English", "Spanish"],
         },
       ],
-      knowsAbout: [
-        "Desenvolvimento de software",
-        "Inteligência artificial",
-        "Agentes autônomos",
-        "Regulação de criptoativos",
-        "Lei 14.478/2022",
-        "Resoluções BCB 519, 520 e 521",
-        "Prestadoras de serviços de ativos virtuais (SPSAV)",
-        "Corretoras de criptoativos",
-      ],
-      slogan: siteConfig.tagline,
+      knowsAbout: t.raw("meta.knowsAbout") as string[],
+      slogan: t("meta.tagline"),
       taxID: siteConfig.cnpj,
       areaServed: "BR",
-      knowsLanguage: ["pt-BR"],
+      knowsLanguage: ["pt-BR", "en", "es"],
     },
     {
       "@type": "WebSite",
-      "@id": `${siteConfig.url}/#website`,
-      url: siteConfig.url,
+      "@id": `${url}/#website`,
+      url,
       name: siteConfig.name,
-      description: siteConfig.description,
-      inLanguage: "pt-BR",
+      description: t("meta.description"),
+      inLanguage: lang,
       publisher: { "@id": `${siteConfig.url}/#organization` },
     },
     {
       "@type": "ProfessionalService",
-      "@id": `${siteConfig.url}/#service`,
+      "@id": `${url}/#service`,
       name: siteConfig.name,
-      description: siteConfig.description,
-      url: siteConfig.url,
-      provider: { "@id": `${siteConfig.url}/#organization` },
-      areaServed: "BR",
+      description: t("meta.description"),
+      url,
       telephone: siteConfig.telephone,
       email: siteConfig.email,
-      serviceType: [
-        "Desenvolvimento de software sob medida",
-        "Inteligência artificial e agentes autônomos",
-        "Consultoria em regulação de criptoativos",
-      ],
+      provider: { "@id": `${siteConfig.url}/#organization` },
+      areaServed: "BR",
+      serviceType: t.raw("meta.serviceType") as string[],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Serviços de desenvolvimento",
-        itemListElement: siteConfig.services.map((service) => ({
+        name: t("meta.catalog"),
+        itemListElement: services.map((s) => ({
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: service.name,
-            description: service.description,
-          },
+          itemOffered: { "@type": "Service", name: s.title, description: s.description },
         })),
       },
     },
     {
       "@type": "FAQPage",
-      "@id": `${siteConfig.url}/#faq`,
+      "@id": `${url}/#faq`,
+      inLanguage: lang,
       mainEntity: faq.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer,
-        },
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
       })),
     },
   ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": graph,
-  };
-
   return (
     <script
       type="application/ld+json"
-      // JSON-LD is static, derived from trusted config — safe to inline.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      // JSON-LD estático, derivado de config e mensagens confiáveis.
+      dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }) }}
     />
   );
 }

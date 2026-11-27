@@ -1,70 +1,20 @@
 import { Bot, Database, Film, Globe, Landmark, Layout, Monitor, Smartphone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { reveal } from "@/components/motion/reveal";
 import { Container, SectionHead } from "@/components/site/ui";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-const services = [
-  {
-    icon: Bot,
-    title: "Inteligência Artificial",
-    description:
-      "IA e agentes autônomos que automatizam tarefas repetitivas, conversam com seus clientes e tomam decisões — liberando seu time para o que importa.",
-    tags: ["Agentes", "LLMs", "Automação"],
-  },
-  {
-    icon: Landmark,
-    title: "Consultoria Cripto",
-    description:
-      "Adequação às Resoluções BCB 519, 520 e 521 e implementação de corretoras, custodiantes e intermediárias de ativos virtuais.",
-    tags: ["SPSAV", "Banco Central", "Compliance"],
-    href: "#consultoria-cripto",
-  },
-  {
-    icon: Monitor,
-    title: "Sistemas Completos",
-    description:
-      "Plataformas sob medida com painéis, dashboards e integrações que organizam a operação e dão visibilidade total do negócio.",
-    tags: ["Dashboard", "API REST", "Relatórios"],
-  },
-  {
-    icon: Database,
-    title: "dApps & BaaS",
-    description:
-      "Aplicações descentralizadas e infraestrutura bancária digital com a segurança e o compliance que o mercado financeiro exige.",
-    tags: ["Blockchain", "Smart Contracts", "KYC"],
-  },
-  {
-    icon: Layout,
-    title: "Landing Pages",
-    description:
-      "Páginas de alta conversão com design moderno, SEO e performance máxima para transformar visitantes em clientes.",
-    tags: ["Conversão", "SEO", "Core Web Vitals"],
-  },
-  {
-    icon: Globe,
-    title: "Sites Institucionais",
-    description:
-      "Presença digital profissional que transmite credibilidade e fortalece sua marca onde seus clientes buscam.",
-    tags: ["Branding", "CMS", "Multi-idioma"],
-  },
-  {
-    icon: Smartphone,
-    title: "Agendamento Online",
-    description:
-      "Gestão de horários para clínicas, barbearias e prestadores — menos faltas, mais clientes e agenda sempre cheia.",
-    tags: ["Calendário", "Notificações", "Pagamento"],
-  },
-  {
-    icon: Film,
-    title: "Plataformas de Vídeo",
-    description:
-      "Streaming sob demanda com gestão de conteúdo, assinaturas e analytics para monetizar sua audiência.",
-    tags: ["Streaming", "Assinaturas", "CDN"],
-  },
-];
+const icons = [Bot, Landmark, Monitor, Database, Layout, Globe, Smartphone, Film];
+/** O 2º card (consultoria cripto) leva até a seção dela. */
+const links: Record<number, string> = { 1: "#consultoria-cripto" };
 
-const Services = () => (
+type Item = { title: string; description: string; tags: string[] };
+
+const Services = () => {
+  const t = useTranslations("services");
+  const services = (t.raw("items") as Item[]).map((it, i) => ({ ...it, icon: icons[i], href: links[i] }));
+  return (
   <section
     id="servicos"
     aria-labelledby="servicos-heading"
@@ -73,10 +23,10 @@ const Services = () => (
     <Container className="flex flex-col gap-12">
       <SectionHead
         id="servicos-heading"
-        eyebrow="Serviços"
-        a="Tecnologia que resolve"
-        b="problemas reais"
-        lead="Do conceito à operação, entregamos soluções completas — e cuidamos delas depois do lançamento."
+        eyebrow={t("eyebrow")}
+        a={t("a")}
+        b={t("b")}
+        lead={t("lead")}
       />
       <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5 p-0">
         {services.map((s, i) => (
@@ -102,9 +52,9 @@ const Services = () => (
               </h3>
               <p className="m-0 flex-1 text-base leading-[1.55] text-ink-muted">{s.description}</p>
               <div className="flex flex-wrap gap-2">
-                {s.tags.map((t) => (
-                  <Badge key={t} variant="tag">
-                    {t}
+                {s.tags.map((tag) => (
+                  <Badge key={tag} variant="tag">
+                    {tag}
                   </Badge>
                 ))}
               </div>
@@ -114,6 +64,7 @@ const Services = () => (
       </ul>
     </Container>
   </section>
-);
+  );
+};
 
 export default Services;

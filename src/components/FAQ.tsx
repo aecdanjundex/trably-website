@@ -1,9 +1,14 @@
+import { useTranslations } from "next-intl";
 import { reveal } from "@/components/motion/reveal";
 import { Container, SectionHead } from "@/components/site/ui";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { faq } from "@/lib/site";
 
-const FAQ = () => (
+type Item = { question: string; answer: string };
+
+const FAQ = () => {
+  const t = useTranslations("faq");
+  const faq = t.raw("items") as Item[];
+  return (
   <section
     id="faq"
     aria-labelledby="faq-heading"
@@ -13,10 +18,10 @@ const FAQ = () => (
       <SectionHead
         id="faq-heading"
         className="flex-[1_1_340px]"
-        eyebrow="Dúvidas"
-        a="Perguntas"
-        b="frequentes"
-        lead="Não achou o que procurava? Fale com a gente pelo WhatsApp."
+        eyebrow={t("eyebrow")}
+        a={t("a")}
+        b={t("b")}
+        lead={t("lead")}
       />
       <div {...reveal(1)} className="min-w-0 flex-[1_1_520px]">
         <Accordion type="single" collapsible className="w-full border-t border-line-strong">
@@ -34,6 +39,7 @@ const FAQ = () => (
       </div>
     </Container>
   </section>
-);
+  );
+};
 
 export default FAQ;

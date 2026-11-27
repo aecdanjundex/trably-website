@@ -1,0 +1,560 @@
+{
+  "meta": {
+    "tagline": "High-end software for businesses that want to scale",
+    "description": "Custom software, AI agents and crypto consulting for Brazil's Central Bank regulation (BCB Resolutions 519, 520 and 521). 18 years building systems and platforms — from architecture to deploy.",
+    "keywords": [
+      "software development",
+      "custom software",
+      "bespoke systems",
+      "crypto consulting",
+      "Brazil crypto regulation",
+      "Central Bank of Brazil crypto",
+      "Brazilian virtual assets law",
+      "Law 14.478/2022",
+      "SPSAV",
+      "BCB Resolution 519",
+      "BCB Resolution 520",
+      "BCB Resolution 521",
+      "how to build a crypto exchange",
+      "crypto exchange from scratch",
+      "virtual asset service provider Brazil",
+      "artificial intelligence",
+      "autonomous agents",
+      "AI automation",
+      "landing pages",
+      "corporate websites",
+      "web applications",
+      "Trably"
+    ],
+    "ogAlt": "Trably Software — custom software, AI and crypto consulting",
+    "ogEyebrow": "SOFTWARE · AI · CRYPTO CONSULTING",
+    "serviceType": [
+      "Custom software development",
+      "Artificial intelligence and autonomous agents",
+      "Crypto asset regulation consulting"
+    ],
+    "knowsAbout": [
+      "Software development",
+      "Artificial intelligence",
+      "Autonomous agents",
+      "Crypto asset regulation",
+      "Brazilian Law 14.478/2022",
+      "BCB Resolutions 519, 520 and 521",
+      "Virtual asset service providers (SPSAV)",
+      "Crypto exchanges"
+    ],
+    "catalog": "Development services"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "whatsappMsg": "Hi! I found you through the Trably website.",
+    "whatsapp": "WhatsApp",
+    "quote": "Get a quote",
+    "requestQuote": "Request a quote",
+    "talkTeam": "Talk to our team",
+    "openMenu": "Open menu",
+    "menu": "Menu",
+    "theme": "Toggle light and dark theme",
+    "language": "Language",
+    "home": "Trably Software — home",
+    "navMain": "Main",
+    "navFooter": "Footer"
+  },
+  "nav": {
+    "services": "Services",
+    "crypto": "Crypto consulting",
+    "process": "Process",
+    "projects": "Projects",
+    "clients": "Clients"
+  },
+  "hero": {
+    "eyebrow": "Software · AI · Crypto consulting",
+    "h1a": "Ideas become",
+    "h1b": "products that scale",
+    "lead": "For 18 years we have designed and built custom systems, platforms and AI agents — from architecture to deploy — and we advise companies on running crypto operations within Brazil's Central Bank regulation.",
+    "guarantee": "Free, no-commitment quote",
+    "stats": [
+      {
+        "value": "18",
+        "unit": "years",
+        "label": "of software engineering"
+      },
+      {
+        "value": "+30",
+        "unit": "",
+        "label": "projects in production"
+      },
+      {
+        "value": "100%",
+        "unit": "",
+        "label": "custom-built"
+      }
+    ]
+  },
+  "showcase": {
+    "label": "Examples of applications we build",
+    "show": "Show: {name}",
+    "pause": "Pause",
+    "play": "Resume",
+    "tabs": {
+      "agent": "AI agent",
+      "swap": "Crypto swap",
+      "wallet": "Web3 wallet",
+      "whatsapp": "WhatsApp chatbot",
+      "quote": "Quotes",
+      "barber": "Scheduling",
+      "lms": "LMS / Courses"
+    },
+    "swap": {
+      "title": "Swap",
+      "settings": "Slippage 0.5%",
+      "from": "You pay",
+      "to": "You receive",
+      "balance": "Balance",
+      "rate": "1 ETH = 3,450 USDC",
+      "fee": "Network fee",
+      "feeValue": "≈ $1.84",
+      "route": "Best route",
+      "button": "Swap"
+    },
+    "wallet": {
+      "account": "Account 1",
+      "network": "Ethereum",
+      "buy": "Buy",
+      "swap": "Swap",
+      "send": "Send",
+      "bridge": "Bridge",
+      "tokens": "Tokens",
+      "nfts": "NFTs",
+      "activity": "Activity",
+      "change": "+2.4% today"
+    },
+    "whatsapp": {
+      "name": "Trably Bot",
+      "status": "online",
+      "m1": "Hi! I'd like a quote for a delivery app",
+      "m2": "Hello! Sure. When do you need the app?",
+      "m3": "In about 2 months",
+      "m4": "Perfect! I've prepared an initial proposal and a specialist will reach out shortly.",
+      "quick": [
+        "See proposal",
+        "Talk to a human"
+      ],
+      "input": "Message"
+    },
+    "quote": {
+      "title": "Quote",
+      "number": "#1042",
+      "client": "Serra Azul Mining",
+      "status": "Approved",
+      "item": "Item",
+      "qty": "Qty",
+      "price": "Amount",
+      "items": [
+        "HQ diamond core bit",
+        "Drilling crown",
+        "NQ rod 3 m"
+      ],
+      "total": "Total",
+      "button": "Create order"
+    },
+    "barber": {
+      "title": "Blade & Co.",
+      "service": "Haircut + beard · 45 min",
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "month": "December",
+      "slots": "Available times",
+      "confirm": "Confirm at 2:30 PM",
+      "reminder": "WhatsApp reminder 1h before"
+    },
+    "lms": {
+      "course": "Financial Management for SMBs",
+      "module": "Module 3 · Cash flow",
+      "lesson": "Lesson 12",
+      "progress": "68% complete",
+      "live": "Joining now",
+      "joined": "joined the course",
+      "watching": "is watching lesson 12",
+      "certificate": "earned the certificate"
+    },
+    "agent": {
+      "title": "Sales agent",
+      "online": "Online",
+      "steps": [
+        "Lead received on WhatsApp",
+        "Agent qualifies it and checks the CRM",
+        "Proposal generated and sent",
+        "Follow-up scheduled"
+      ],
+      "command": "proposal.send(client)"
+    }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "a": "The wrong technology",
+    "b": "is expensive",
+    "lead": "Most companies don't suffer from a lack of software — they suffer from the wrong software. These are the symptoms we see most often:",
+    "symptoms": "Symptoms",
+    "pains": [
+      {
+        "title": "Spreadsheets and systems that don't talk",
+        "text": "Data copied by hand between tools, rework and decisions made in the dark."
+      },
+      {
+        "title": "Projects that never end",
+        "text": "Slipping deadlines, undefined scope and vendors who vanish after delivery."
+      },
+      {
+        "title": "Software that can't keep up with growth",
+        "text": "Rigid templates that slow down, crash at peak times and block the next stage of the business."
+      },
+      {
+        "title": "A team stuck on repetitive tasks",
+        "text": "Manual support, data entry and follow-ups that AI agents could handle."
+      }
+    ],
+    "fixEyebrow": "How we solve it",
+    "fixA": "Custom engineering,",
+    "fixB": "done right",
+    "fixes": [
+      "Architecture designed to scale from the very first deploy",
+      "Predictable scope, schedule and delivery every sprint",
+      "Systems, APIs and data integrated in one place",
+      "AI agents automating operations 24/7",
+      "Ongoing support and evolution after launch"
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "a": "Technology that solves",
+    "b": "real problems",
+    "lead": "From concept to operation, we deliver complete solutions — and take care of them after launch.",
+    "items": [
+      {
+        "title": "Artificial Intelligence",
+        "description": "AI and autonomous agents that automate repetitive work, talk to your customers and make decisions — freeing your team for what matters.",
+        "tags": [
+          "Agents",
+          "LLMs",
+          "Automation"
+        ]
+      },
+      {
+        "title": "Crypto Consulting",
+        "description": "Compliance with BCB Resolutions 519, 520 and 521 and implementation of crypto exchanges, custodians and virtual asset intermediaries.",
+        "tags": [
+          "SPSAV",
+          "Central Bank",
+          "Compliance"
+        ]
+      },
+      {
+        "title": "Complete Systems",
+        "description": "Custom platforms with admin panels, dashboards and integrations that organize operations and give full visibility of the business.",
+        "tags": [
+          "Dashboard",
+          "REST API",
+          "Reports"
+        ]
+      },
+      {
+        "title": "dApps & BaaS",
+        "description": "Decentralized applications and digital banking infrastructure with the security and compliance the financial market demands.",
+        "tags": [
+          "Blockchain",
+          "Smart Contracts",
+          "KYC"
+        ]
+      },
+      {
+        "title": "Landing Pages",
+        "description": "High-converting pages with modern design, SEO and top performance to turn visitors into customers.",
+        "tags": [
+          "Conversion",
+          "SEO",
+          "Core Web Vitals"
+        ]
+      },
+      {
+        "title": "Corporate Websites",
+        "description": "A professional online presence that builds credibility and strengthens your brand where your customers search.",
+        "tags": [
+          "Branding",
+          "CMS",
+          "Multilingual"
+        ]
+      },
+      {
+        "title": "Online Scheduling",
+        "description": "Appointment management for clinics, barbershops and service providers — fewer no-shows, more customers and a full calendar.",
+        "tags": [
+          "Calendar",
+          "Notifications",
+          "Payments"
+        ]
+      },
+      {
+        "title": "Video Platforms",
+        "description": "On-demand streaming with content management, subscriptions and analytics to monetize your audience.",
+        "tags": [
+          "Streaming",
+          "Subscriptions",
+          "CDN"
+        ]
+      }
+    ]
+  },
+  "crypto": {
+    "eyebrow": "Crypto consulting · Central Bank of Brazil",
+    "a": "Your crypto operation within",
+    "b": "BCB regulation",
+    "lead": "BCB Resolutions 519, 520 and 521, which implement Brazil's legal framework for crypto assets (Law 14.478/2022), have been in force since February 2, 2026. Anyone who intermediates, holds in custody or exchanges virtual assets now needs Central Bank authorization as an SPSAV (virtual asset service provider). We help you get there — from reading the rules to a running system.",
+    "cta": "Talk about consulting",
+    "ctaNote": "Direct contact on WhatsApp +55 (84) 98778-2431",
+    "whatsappMsg": "Hi! I'd like to talk about crypto consulting and Central Bank of Brazil regulation.",
+    "resolution": "BCB Resolution",
+    "resolutions": [
+      {
+        "n": "519",
+        "title": "Authorization",
+        "text": "The Central Bank authorization process for virtual asset service providers: requirements, documentation and application steps."
+      },
+      {
+        "n": "520",
+        "title": "Incorporation and operation",
+        "text": "Rules for SPSAVs: governance, capital, asset segregation, custody, AML/CFT, cybersecurity and customer protection."
+      },
+      {
+        "n": "521",
+        "title": "Foreign exchange and capital",
+        "text": "Virtual asset transactions treated as foreign exchange and international capital — stablecoins, transfers and cross-border payments."
+      }
+    ],
+    "knowEyebrow": "Crypto regulation know-how",
+    "knowTitle": "We know how to work with the regulation — in the rules and in the code",
+    "knowText": "We have followed Brazil's crypto legal framework from Law 14.478/2022 to the Central Bank's 2026 resolutions, and we have already built in practice what they require: dApps, NFT marketplaces, banking infrastructure (BaaS) with KYC, custody and audit trails. You talk to people who understand the regulatory requirement and know how to turn it into systems, processes and policies.",
+    "roadmapTitle": "How to build a crypto exchange from scratch",
+    "roadmapBadge": "6 steps",
+    "step": "Step",
+    "roadmap": [
+      {
+        "title": "Model and classification",
+        "text": "We define what the operation will do — intermediation, custody or exchange — and which SPSAV category it falls under."
+      },
+      {
+        "title": "Corporate structure",
+        "text": "Incorporation, capital, governance and responsible officers required by BCB Resolution 520."
+      },
+      {
+        "title": "BCB authorization",
+        "text": "Business plan, internal policies and the authorization application file under BCB Resolution 519."
+      },
+      {
+        "title": "Compliance and AML/CFT",
+        "text": "KYC/KYB, transaction monitoring, travel rule, anti-money laundering and regulatory reporting."
+      },
+      {
+        "title": "Exchange technology",
+        "text": "Order book or integrated liquidity, wallets with segregated custody (hot/cold, MPC), Pix, APIs and back office."
+      },
+      {
+        "title": "Secure operation",
+        "text": "Cybersecurity, risk management, auditing, business continuity and continuous evolution after go-live."
+      }
+    ],
+    "disclaimer": "Technical and regulatory consulting. It does not replace legal counsel for the formal filing with the Central Bank."
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "a": "From diagnosis",
+    "b": "to deploy",
+    "lead": "A simple, transparent process: you know what is being done, when it will be ready and how much it costs.",
+    "step": "Step",
+    "steps": [
+      {
+        "title": "Diagnosis",
+        "text": "We understand the business, the problem and the constraints (including regulatory ones), and leave with a clear scope and schedule."
+      },
+      {
+        "title": "Architecture and build",
+        "text": "Solution design and development in short sprints, with deliveries you can see working every week."
+      },
+      {
+        "title": "Deploy",
+        "text": "Testing, security and performance before going live. A smooth launch, monitored from day one."
+      },
+      {
+        "title": "Evolution",
+        "text": "Ongoing support, fixes and new features as your business grows."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "a": "Projects already",
+    "b": "live",
+    "lead": "Real solutions we built and keep running in production, delivering value to our clients every day.",
+    "items": [
+      {
+        "title": "Scheduling System",
+        "category": "Clinics & Barbershops",
+        "description": "Appointment management with an admin panel and automatic notifications that reduce no-shows and keep the calendar full."
+      },
+      {
+        "title": "Learning Platform",
+        "category": "Education",
+        "description": "A virtual learning environment with video lessons, quizzes and certificates — scaling teaching without losing quality."
+      },
+      {
+        "title": "Streaming Platform",
+        "category": "Entertainment",
+        "description": "Video on demand with subscriptions and content management, ready to monetize a growing audience."
+      },
+      {
+        "title": "Bank as a Service",
+        "category": "Fintech",
+        "description": "Digital banking infrastructure with payment APIs, KYC and compliance — financial-grade security."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Clients",
+    "a": "The trust of those who",
+    "b": "grew with us",
+    "rating": "5 out of 5 stars",
+    "items": [
+      {
+        "name": "José Ronilson Dantas",
+        "business": "JAMA Exploration",
+        "initials": "JR",
+        "role": "Commercial and Financial Director",
+        "text": "Trably built the whole JAMA Exploration platform: the corporate website in three languages, the customer portal, the supplier portal and our internal panel. Today quotes, orders and catalog live in one place, and our customers follow everything online. The team understood the mining business and delivered a custom system that truly reflects who we are."
+      },
+      {
+        "name": "Pedro",
+        "business": "Barbearia Real",
+        "initials": "PR",
+        "role": "Owner",
+        "text": "Trably completely transformed how I run my barbershop. I used to lose customers because my bookings were disorganized. Today, with the custom system they built, my customers book online easily and get automatic notifications. I cut no-shows by 70% and my calendar is always full. It was the best investment I've made in my business."
+      },
+      {
+        "name": "Rômulo",
+        "business": "Frio Eletromáquinas",
+        "initials": "RF",
+        "role": "Commercial Director",
+        "text": "We needed a professional online presence to win customers through paid traffic. Trably built a landing page that really converts. In less than two months we tripled our qualified leads and our cost per lead dropped by half. The team understood exactly what we needed and went beyond our expectations."
+      },
+      {
+        "name": "João",
+        "business": "NFT Marketplace",
+        "initials": "JO",
+        "role": "Community Founder",
+        "text": "Building an NFT marketplace from scratch seemed impossible until I met Trably. They developed the entire NFT minting and trading platform for my community. The system is fast, secure and intuitive. We launched our first collection successfully and today we have an active community trading on the platform. Highly recommended!"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "a": "Frequently asked",
+    "b": "questions",
+    "lead": "Didn't find what you were looking for? Talk to us on WhatsApp.",
+    "items": [
+      {
+        "question": "How long does it take to build a project?",
+        "answer": "It depends on the scope. A landing page is usually ready in 1 to 2 weeks, while complete systems take 1 to 3 months. Once we understand your needs, we present a clear schedule with predictable deliveries."
+      },
+      {
+        "question": "Do you build fully custom solutions?",
+        "answer": "Yes. We design each solution around your business needs — from architecture to deploy — without relying on rigid templates, ensuring scalability and long-term maintainability."
+      },
+      {
+        "question": "Do you offer consulting on Brazil's Central Bank crypto regulation?",
+        "answer": "Yes. We advise exchanges, custodians, intermediaries and companies that want to operate with crypto assets in Brazil: reading the legal framework (Law 14.478/2022) and BCB Resolutions 519, 520 and 521 — in force since February 2, 2026 — for virtual asset service providers (SPSAV), compliance assessment, an adaptation plan and the technology required (KYC, anti-money laundering, asset segregation and reporting)."
+      },
+      {
+        "question": "How do you build a crypto exchange from scratch?",
+        "answer": "In six steps: define the business model and its classification (intermediary, custodian or exchange); set up the required corporate structure, capital and governance; apply for Central Bank authorization as an SPSAV (BCB Resolutions 519 and 520); implement compliance and AML/CFT (KYC/KYB, monitoring and reporting); build the technology (order book or integrated liquidity, wallets with segregated custody, Pix and APIs); and operate with cybersecurity, risk management and auditing. We support every step, from regulation to code."
+      },
+      {
+        "question": "Is there support after launch?",
+        "answer": "Yes. We provide ongoing post-launch support, with monitoring, fixes and product evolution as your business grows."
+      },
+      {
+        "question": "How does the quote work?",
+        "answer": "It is free and with no commitment. Describe your project through the contact form or on WhatsApp +55 (84) 98778-2431 and we will get back to you with a detailed proposal, scope and timeline."
+      },
+      {
+        "question": "Which technologies do you use?",
+        "answer": "We work with modern, proven web and back-end stacks, choosing the most suitable technology for each project in terms of performance, security and scalability."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Let's talk",
+    "a": "Ready to get your project",
+    "b": "off the ground?",
+    "lead": "Tell us your idea and we will design the right solution for your business. From strategy to deploy, with 18 years of experience taking care of every detail.",
+    "highlights": [
+      "Agile development with predictable deliveries",
+      "Ongoing support and evolution after launch",
+      "Transparent communication at every step"
+    ],
+    "next": "Next steps",
+    "free": "Free quote",
+    "steps": [
+      {
+        "title": "You share the idea",
+        "text": "Through the form or on WhatsApp, however it is — no finished document needed."
+      },
+      {
+        "title": "We understand the scope",
+        "text": "A conversation to understand the business, the problem and the constraints, including regulatory ones."
+      },
+      {
+        "title": "You get the proposal",
+        "text": "Detailed scope, schedule and investment. Free and with no commitment."
+      }
+    ],
+    "direct": "Contact us directly"
+  },
+  "footer": {
+    "about": "Custom software engineering, AI agents and crypto consulting. We design, build and maintain systems that help businesses grow.",
+    "nav": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "contact": {
+    "eyebrow": "Free quote",
+    "title": "Talk to our team",
+    "description": "Fill in your details and we will continue the conversation on WhatsApp.",
+    "name": "Name",
+    "namePh": "Your full name",
+    "email": "Email",
+    "emailPh": "you@email.com",
+    "phone": "Phone",
+    "phonePh": "+1 5551234567",
+    "terms": "I agree to the terms of service and privacy policy",
+    "submit": "Send",
+    "message": "Hi! I found you through the Trably website and I'd like a quote.\n\nName: {name}\nEmail: {email}\nPhone: {phone}",
+    "errors": {
+      "nameRequired": "Name is required",
+      "max100": "Maximum of 100 characters",
+      "emailInvalid": "Invalid email",
+      "max255": "Maximum of 255 characters",
+      "phoneRequired": "Phone is required",
+      "phoneFormat": "Invalid format. E.g. +1 5551234567",
+      "terms": "You must accept the terms"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  }
+}

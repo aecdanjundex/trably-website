@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
+import pt from "../../messages/pt.json";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
     short_name: siteConfig.shortName,
-    description: siteConfig.description,
+    description: pt.meta.description,
     start_url: "/",
+    id: "/",
     display: "standalone",
     background_color: "#0b0e16",
     theme_color: "#0b0e16",

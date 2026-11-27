@@ -1,3 +1,6 @@
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 import CTA from "@/components/CTA";
 import CryptoConsulting from "@/components/CryptoConsulting";
 import FAQ from "@/components/FAQ";
@@ -11,16 +14,21 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { ContactProvider } from "@/components/contact/ContactProvider";
 import { RevealRoot } from "@/components/motion/RevealRoot";
+import type { Locale } from "@/i18n/routing";
 
-/** Server component: só Navbar, botões de contato e o reveal hidratam no cliente. */
-export default function HomePage() {
+/** Server component estático por idioma: só Navbar, contato, vitrine e reveal hidratam. */
+export default function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+  const t = useTranslations("common");
+
   return (
     <ContactProvider>
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
       >
-        Pular para o conteúdo
+        {t("skip")}
       </a>
       <Navbar />
       <main id="conteudo">
